@@ -12,6 +12,19 @@ export default function ContactPage() {
             need support, our team is ready to assist you.
           </p>
         </div>
+
+        <svg
+          className="mot-contact-hero-wave"
+          viewBox="0 0 1440 120"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path
+            d="M0,40 C240,110 480,0 720,45 C960,90 1200,10 1440,60 L1440,120 L0,120 Z"
+            fill="#fffdf8"
+          />
+        </svg>
       </section>
 
       {/* ================= GET IN TOUCH + FORM ================= */}

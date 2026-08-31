@@ -1837,15 +1837,26 @@
   position: relative;
   overflow: hidden;
   text-align: center;
-  padding: clamp(150px, 20vw, 190px) 32px clamp(50px, 7vw, 80px);
-  background:
-    radial-gradient(circle at 85% 15%, rgba(239, 169, 47, 0.12), transparent 55%),
-    linear-gradient(180deg, #fffdf8 0%, #fbf4e6 100%);
+  padding: clamp(110px, 14vw, 140px) 32px clamp(50px, 6vw, 70px);
+  background: linear-gradient(160deg, #fceccb 0%, #f6d9a0 45%, #eeb85c 100%);
 }
 
 .mot-contact-hero-inner {
+  position: relative;
+  z-index: 1;
   max-width: 640px;
   margin: 0 auto;
+}
+
+.mot-contact-hero-wave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  width: 100%;
+  height: clamp(40px, 6vw, 70px);
+  display: block;
+  z-index: 0;
 }
 
 .mot-contact-heading {
@@ -1864,7 +1875,7 @@
 }
 
 .mot-contact-subtext {
-  color: #4d5a7a;
+  color: #5c4620;
   font-size: clamp(0.98rem, 1.5vw, 1.1rem);
   line-height: 1.6;
   margin: 0;
@@ -1873,7 +1884,10 @@
 /* ---------- MAIN SECTION ---------- */
 
 .mot-contact-section {
-  padding: 0 32px clamp(70px, 9vw, 110px);
+  position: relative;
+  z-index: 1;
+  background: #fffdf8;
+  padding: clamp(20px, 3vw, 40px) 32px clamp(70px, 9vw, 110px);
 }
 
 .mot-contact-grid {
