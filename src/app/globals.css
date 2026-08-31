@@ -1414,3 +1414,415 @@
     padding: 16px;
   }
 }
+/* =========================================================
+   MOT ABOUT PAGE
+   Uses the same palette/tokens as Hero + Navbar:
+   cream #fffdf8/#fbf4e6, gold #efa92f/#c9800c,
+   navy #17284f, body text #4d5a7a
+========================================================= */
+
+.mot-about-section {
+  padding: clamp(56px, 8vw, 96px) 32px;
+}
+
+.mot-about-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* ---------- shared eyebrow (reuses hero style) ---------- */
+
+.mot-about-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(239, 169, 47, 0.14);
+  border: 1px solid rgba(239, 169, 47, 0.3);
+  color: #c9800c;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: 20px;
+}
+
+.mot-about-heading {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  color: #17284f;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  font-size: clamp(1.8rem, 4vw, 2.75rem);
+  margin: 0 0 18px;
+}
+
+.mot-about-text {
+  color: #4d5a7a;
+  font-size: clamp(0.98rem, 1.4vw, 1.08rem);
+  line-height: 1.7;
+  margin: 0 0 16px;
+}
+
+/* ---------- HERO / INTRO ---------- */
+
+.mot-about-hero {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding-top: clamp(150px, 20vw, 190px);
+  background:
+    radial-gradient(circle at 85% 15%, rgba(239, 169, 47, 0.12), transparent 55%),
+    linear-gradient(180deg, #fffdf8 0%, #fbf4e6 100%);
+}
+
+.mot-about-hero-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ---------- STORY (image + text) ---------- */
+
+.mot-about-story {
+  background: #fffdf8;
+}
+
+.mot-about-story-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.mot-about-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #fff8dd, #fbeecb);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 20px 45px rgba(31, 44, 72, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c9800c;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* ---------- MISSION / VISION cards ---------- */
+
+.mot-about-mv-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.mot-about-card {
+  border-radius: 24px;
+  padding: 32px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 252, 245, 0.9),
+    rgba(247, 242, 232, 0.75)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 15px 40px rgba(31, 44, 72, 0.08);
+}
+
+.mot-about-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(239, 169, 47, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+.mot-about-card h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #17284f;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.mot-about-card p {
+  color: #4d5a7a;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ---------- IMPACT STATS ---------- */
+
+.mot-about-stats-section {
+  background: #17284f;
+}
+
+.mot-about-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  text-align: center;
+}
+
+.mot-about-stat-number {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  color: #efa92f;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.mot-about-stat-label {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* ---------- WHY PARENTS CHOOSE (feature grid) ---------- */
+
+.mot-about-features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.mot-about-feature {
+  padding: 30px;
+  border-radius: 22px;
+  background: #fffdf8;
+  border: 1px solid rgba(23, 40, 79, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mot-about-feature:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 45px rgba(31, 44, 72, 0.1);
+}
+
+.mot-about-feature-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: rgba(239, 169, 47, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.mot-about-feature h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #17284f;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.mot-about-feature p {
+  color: #4d5a7a;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ---------- VETTING PROCESS (steps) ---------- */
+
+.mot-about-steps {
+  background: #fbf4e6;
+}
+
+.mot-about-steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.mot-about-step {
+  display: flex;
+  gap: 24px;
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(23, 40, 79, 0.1);
+}
+
+.mot-about-step:last-child {
+  border-bottom: none;
+}
+
+.mot-about-step-number {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #efa92f;
+  color: #17284f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Georgia, serif;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.mot-about-step-content h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #17284f;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+.mot-about-step-content p {
+  color: #4d5a7a;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ---------- VALUES ---------- */
+
+.mot-about-values-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.mot-about-value {
+  padding: 26px 22px;
+  border-radius: 18px;
+  background: rgba(239, 169, 47, 0.08);
+  border: 1px solid rgba(239, 169, 47, 0.18);
+  text-align: center;
+}
+
+.mot-about-value h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #17284f;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.mot-about-value p {
+  color: #4d5a7a;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ---------- CTA ---------- */
+
+.mot-about-cta {
+  text-align: center;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(239, 169, 47, 0.12), transparent 55%),
+    linear-gradient(180deg, #fffdf8 0%, #fbf4e6 100%);
+}
+
+.mot-about-cta-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mot-about-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 54px;
+  padding: 0 28px;
+  border-radius: 999px;
+  background: #efa92f;
+  color: #17284f;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 10px 25px rgba(218, 147, 23, 0.22);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mot-about-cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(218, 147, 23, 0.3);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (min-width: 760px) {
+  .mot-about-mv-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .mot-about-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mot-about-values-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .mot-about-stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .mot-about-story-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .mot-about-story-grid.mot-reverse .mot-about-placeholder {
+    order: 2;
+  }
+
+  .mot-about-features-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 899px) {
+  .mot-about-hero {
+    padding-top: clamp(120px, 24vw, 150px);
+  }
+
+  .mot-about-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mot-about-hero {
+    padding-top: clamp(100px, 26vw, 125px);
+  }
+
+  .mot-about-section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .mot-about-values-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mot-about-feature,
+  .mot-about-cta-button {
+    transition-duration: 0.001ms !important;
+  }
+}
