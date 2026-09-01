@@ -2235,3 +2235,320 @@
     transition-duration: 0.001ms !important;
   }
 }
+
+/* ==========================================================================
+   FAQ PAGE
+   ========================================================================== */
+
+.mot-faq-page {
+  background-color: #fffdf8;
+  padding-bottom: 7rem;
+}
+
+/* --- Hero --- */
+.mot-faq-hero {
+  text-align: center;
+  padding: 5.5rem 1.5rem 2.5rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.mot-faq-hero-kicker {
+  display: inline-block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: #c9800c;
+  margin-bottom: 1rem;
+}
+
+.mot-faq-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #17284f;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+
+.mot-faq-subtitle {
+  font-size: 1.125rem;
+  color: #4d5a7a;
+  line-height: 1.7;
+}
+
+/* --- Hero divider --- */
+.mot-faq-hero-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  max-width: 320px;
+  margin: 0 auto 3.5rem;
+  padding: 0 1.5rem;
+}
+
+.mot-faq-hero-divider-line {
+  flex: 1;
+  height: 1px;
+  background-color: #e3d9c4;
+}
+
+.mot-faq-hero-divider-mark {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #efa92f;
+  flex-shrink: 0;
+}
+
+/* --- Content wrapper --- */
+.mot-faq-content {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.mot-faq-category {
+  margin-bottom: 3rem;
+}
+
+.mot-faq-category-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.mot-faq-category-rule {
+  width: 28px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #efa92f;
+  flex-shrink: 0;
+}
+
+.mot-faq-category-badge {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #17284f;
+}
+
+/* --- FAQ list & items --- */
+.mot-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mot-faq-item {
+  background-color: #ffffff;
+  border: 1px solid #e9e3d6;
+  border-radius: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mot-faq-item-open {
+  border-color: #efa92f;
+  box-shadow: 0 10px 28px rgba(23, 40, 79, 0.09);
+}
+
+.mot-faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.4rem 1.75rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.mot-faq-number {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid #efa92f;
+  color: #17284f;
+  font-family: Georgia, serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mot-faq-question-text {
+  flex: 1;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #17284f;
+}
+
+.mot-faq-toggle {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background-color: #ffffff;
+  border: 1.5px solid #17284f;
+  color: #17284f;
+  transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.mot-faq-item-open .mot-faq-toggle {
+  transform: rotate(45deg);
+  border-color: #efa92f;
+  color: #c9800c;
+}
+
+.mot-faq-answer {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(-6px);
+  padding: 0 1.75rem 0 calc(1.75rem + 32px + 1.25rem);
+  border-top: 1px solid transparent;
+  transition: max-height 0.35s ease, opacity 0.3s ease, transform 0.3s ease,
+    padding-bottom 0.35s ease, border-color 0.2s ease;
+}
+
+.mot-faq-answer-visible {
+  max-height: 300px;
+  opacity: 1;
+  transform: translateY(0);
+  padding-top: 1.1rem;
+  padding-bottom: 1.6rem;
+  border-top-color: #f0ebe0;
+  margin-top: 0.1rem;
+}
+
+.mot-faq-answer p {
+  color: #4d5a7a;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* --- CTA band --- */
+.mot-faq-cta {
+  max-width: 880px;
+  margin: 5.5rem auto 0;
+  padding: 0 1.5rem;
+}
+
+.mot-faq-cta-inner {
+  position: relative;
+  overflow: hidden;
+  background-color: #17284f;
+  border-radius: 20px;
+  padding: 3rem 3.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.mot-faq-cta-inner::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 1px solid rgba(239, 169, 47, 0.25);
+}
+
+.mot-faq-cta-inner::after {
+  content: "";
+  position: absolute;
+  bottom: -90px;
+  right: 40px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 1px solid rgba(239, 169, 47, 0.15);
+}
+
+.mot-faq-cta-text-block {
+  position: relative;
+  z-index: 1;
+  text-align: left;
+}
+
+.mot-faq-cta-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.85rem;
+  color: #fffdf8;
+  margin-bottom: 0.5rem;
+}
+
+.mot-faq-cta-text {
+  color: #b7c0d6;
+  font-size: 1.02rem;
+  max-width: 380px;
+}
+
+.mot-faq-cta-button {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  display: inline-block;
+  background-color: #efa92f;
+  color: #17284f;
+  font-weight: 700;
+  padding: 0.9rem 2.25rem;
+  border-radius: 999px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+}
+
+.mot-faq-cta-button:hover {
+  background-color: #fbf4e6;
+}
+
+/* --- Responsive --- */
+@media (max-width: 640px) {
+  .mot-faq-title {
+    font-size: 2.1rem;
+  }
+
+  .mot-faq-question {
+    gap: 0.85rem;
+    padding: 1.25rem;
+  }
+
+  .mot-faq-answer {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .mot-faq-answer-visible {
+    padding-bottom: 1.25rem;
+  }
+
+  .mot-faq-cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2.25rem;
+  }
+
+  .mot-faq-cta-text-block {
+    text-align: left;
+  }
+
+  .mot-faq-cta-button {
+    width: 100%;
+    text-align: center;
+  }
+}
