@@ -1,0 +1,82 @@
+.sequence {
+  min-width: 0;
+}
+
+.stage {
+  min-width: 0;
+}
+
+.cards {
+  min-width: 0;
+}
+
+/* With animation enabled, the cards occupy the same position. */
+.sequence[data-enhanced="true"] {
+  position: relative;
+  height: var(--sequence-height);
+}
+
+.sequence[data-enhanced="true"] .stage {
+  position: sticky;
+  top: 110px;
+}
+
+.sequence[data-enhanced="true"] .cards {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  gap: 0;
+  padding: 0;
+  margin-block: 0;
+}
+
+.sequence[data-enhanced="true"] .cards > * {
+  grid-area: 1 / 1;
+
+  /* Override the previous individual sticky-card behaviour. */
+  position: relative !important;
+  top: auto !important;
+  z-index: auto !important;
+
+  opacity: var(--sequence-opacity, 0);
+  translate:
+    var(--sequence-x, 0px)
+    var(--sequence-y, 0px);
+
+  /* Movement follows scrolling rather than a timed entrance. */
+  transition: none !important;
+  pointer-events: none;
+}
+
+/* Keep the first card visible while the sequence initializes. */
+.sequence[data-enhanced="true"] .cards > :first-child {
+  opacity: var(--sequence-opacity, 1);
+}
+
+@media (max-width: 760px) {
+  .sequence[data-enhanced="true"] .stage {
+    top: 90px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sequence[data-enhanced="true"] {
+    height: auto;
+  }
+
+  .sequence[data-enhanced="true"] .stage {
+    position: static;
+  }
+
+  .sequence[data-enhanced="true"] .cards {
+    display: grid;
+    gap: 24px;
+  }
+
+  .sequence[data-enhanced="true"] .cards > * {
+    grid-area: auto;
+    opacity: 1;
+    translate: none;
+    pointer-events: auto;
+  }
+}

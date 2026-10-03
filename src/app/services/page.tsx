@@ -107,14 +107,9 @@ export default function ServicesPage() {
             <p className={styles.eyebrow}>OUR SERVICES</p>
 
             <h1 id="services-title">
-              <span className={styles.titleLine}>
-                One-to-one online tuition.
-              </span>
-
-              <span className={styles.titleLine}>
-                Built around your child.
-              </span>
-            </h1>
+  One-to-one online tuition.
+  <span>Built around your child.</span>
+</h1>
 
             <p className={styles.intro}>
               From KG to Class 12, explore personalised online tutoring

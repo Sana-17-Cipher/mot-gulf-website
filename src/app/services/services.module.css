@@ -852,3 +852,28 @@
     padding-block: 42px;
   }
 }
+/* Clean headings on the Services page */
+.page .hero h1 {
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+  color: var(--navy);
+}
+
+.page .hero h1 .titleLine {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--navy);
+  box-shadow: none;
+}
+
+.page .hero h1 .titleLine + .titleLine {
+  margin: 6px 0 0;
+  background: transparent;
+}
