@@ -491,3 +491,88 @@
     transition: none;
   }
 }
+.offerings .container {
+  width: min(1120px, calc(100% - 40px));
+}
+
+.offerings .programmes {
+  padding-top: 94px;
+  padding-bottom: 76px;
+}
+
+.offerings .topCurve {
+  height: 48px;
+}
+
+.offerings .programmeHeading {
+  margin-bottom: 34px;
+}
+
+.offerings .programmeHeading h2 {
+  font-size: clamp(2rem, 3.8vw, 3.2rem);
+}
+
+.offerings .programmeCard {
+  min-height: 190px;
+  padding: 20px 17px;
+}
+
+.offerings .programmeCard h3 {
+  margin-block: 28px 22px;
+  font-size: clamp(1.6rem, 2.3vw, 2rem);
+}
+
+.offerings .learning {
+  padding-top: 54px;
+  padding-bottom: 78px;
+  overflow-x: clip;
+}
+
+.offerings .learningHeading {
+  margin-bottom: 32px;
+}
+
+.offerings .learningHeading h2 {
+  font-size: clamp(2rem, 3.8vw, 3rem);
+}
+
+.offerings .learningIntro {
+  margin-top: 16px !important;
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+.offerings .trackPanel {
+  min-height: 200px;
+  padding: 30px;
+  gap: 28px;
+}
+
+.offerings .trackTitle h3 {
+  font-size: clamp(1.65rem, 2.7vw, 2.3rem);
+}
+
+.offerings .foundationText {
+  font-size: 1.1rem;
+}
+
+@media (max-width: 700px) {
+  .offerings .container {
+    width: calc(100% - 32px);
+  }
+
+  .offerings .programmes {
+    padding-top: 76px;
+    padding-bottom: 60px;
+  }
+
+  .offerings .programmeCard {
+    min-height: 180px;
+  }
+
+  .offerings .trackPanel {
+    min-height: 0;
+    padding: 24px;
+    gap: 22px;
+  }
+}

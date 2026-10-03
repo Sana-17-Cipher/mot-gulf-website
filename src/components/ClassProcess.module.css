@@ -1,0 +1,217 @@
+.process {
+  --navy: #172547;
+  --cream: #fbf6ec;
+  --gold: #eba932;
+
+  /* Adjust this if your fixed navbar is taller. */
+  --sticky-top: 110px;
+
+  padding: 56px 0 72px;
+  background: var(--navy);
+  color: var(--cream);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.process,
+.process *,
+.process *::before,
+.process *::after {
+  box-sizing: border-box;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  align-items: start;
+  gap: clamp(32px, 6vw, 80px);
+  width: min(1120px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.heading {
+  position: sticky;
+  top: var(--sticky-top);
+  padding-top: 12px;
+}
+
+.process .eyebrow {
+  margin: 0 0 22px;
+  color: var(--gold);
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1.7;
+  letter-spacing: 0.14em;
+}
+
+.process .heading h2 {
+  margin: 0;
+  font-family: var(--font-heading, Georgia), serif;
+  font-size: clamp(2rem, 3.3vw, 2.85rem);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+
+.heading h2 span {
+  display: table;
+  padding: 7px 12px 10px;
+  background: var(--cream);
+  color: var(--navy);
+  border-radius: 3px;
+  box-shadow: 0 5px 0 #0000001c;
+}
+
+.heading h2 span + span {
+  margin-top: 7px;
+  margin-left: 12px;
+  background: #efd7a6;
+}
+
+.process .introduction {
+  max-width: 320px;
+  margin: 26px 0 0;
+  color: #d0d7e4;
+  font-size: 0.92rem;
+  line-height: 1.85;
+}
+
+.headingRule {
+  width: 54px;
+  height: 2px;
+  margin-top: 28px;
+  background: var(--gold);
+}
+
+/* Cards overlap progressively as the page scrolls. */
+.stack {
+  display: grid;
+  gap: 40px;
+  padding: 0 0 36px;
+  margin: 0;
+  list-style: none;
+}
+
+.stepCard {
+  position: sticky;
+  top: calc(var(--sticky-top) + var(--step) * 8px);
+  z-index: calc(var(--step) + 1);
+  min-height: 220px;
+  padding: 28px 30px 42px;
+  border: 1px solid #d8d5cd;
+  border-radius: 12px;
+  background: #f8f3e9;
+  color: var(--navy);
+  box-shadow: 0 -5px 20px #0b163021;
+}
+
+.stepCard:nth-child(3n + 2) {
+  background: #e5ebef;
+  border-color: #d3dce3;
+}
+
+.stepCard:nth-child(3n) {
+  background: #efddb6;
+  border-color: #dac79f;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 23px;
+}
+
+.stepLabel {
+  flex-shrink: 0;
+  color: #566177;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.smallRule {
+  width: 44px;
+  height: 1px;
+  background: #17254740;
+}
+
+.process .stepCard h3 {
+  margin: 0;
+  font-family: var(--font-heading, Georgia), serif;
+  font-size: clamp(1.45rem, 2.3vw, 1.9rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.process .stepCard > p {
+  max-width: 370px;
+  margin: 15px 0 0;
+  color: #4e5a70;
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.cornerNumber {
+  position: absolute;
+  right: 23px;
+  bottom: 15px;
+  color: #17254760;
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 760px) {
+  .process {
+    --sticky-top: 90px;
+    padding: 42px 0 48px;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    width: calc(100% - 32px);
+  }
+
+  .heading {
+    position: static;
+    padding-top: 0;
+  }
+
+  .process .introduction {
+    max-width: 440px;
+    margin-top: 20px;
+  }
+
+  .headingRule {
+    display: none;
+  }
+
+  .stack {
+    gap: 30px;
+    padding-bottom: 20px;
+  }
+
+  .stepCard {
+    top: calc(var(--sticky-top) + var(--step) * 5px);
+    min-height: 220px;
+    padding: 24px 24px 40px;
+  }
+}
+
+/* On short screens, give each card ordinary document space. */
+@media (max-height: 650px) {
+  .heading,
+  .stepCard {
+    position: relative;
+    top: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heading,
+  .stepCard {
+    position: relative;
+    top: auto;
+  }
+}

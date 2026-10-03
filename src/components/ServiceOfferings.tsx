@@ -1,3 +1,4 @@
+import ScrollRevealList from "./ScrollRevealList";
 import styles from "./ServiceOfferings.module.css";
 
 const programmes = [
@@ -59,7 +60,9 @@ export default function ServiceOfferings() {
         <div className={styles.container}>
           <header className={styles.programmeHeading}>
             <div>
-              <p className={styles.eyebrow}>CURRICULUM SUPPORT</p>
+              <p className={styles.eyebrow}>
+                CURRICULUM SUPPORT
+              </p>
 
               <h2 id="programmes-title">
                 Our Tutoring
@@ -81,7 +84,10 @@ export default function ServiceOfferings() {
                 className={styles.programmeCard}
               >
                 <div className={styles.cardTop}>
-                  <span className={styles.cardLabel}>PROGRAMME</span>
+                  <span className={styles.cardLabel}>
+                    PROGRAMME
+                  </span>
+
                   <span aria-hidden="true">
                     {String(index + 1).padStart(2, "0")}
                   </span>
@@ -91,14 +97,21 @@ export default function ServiceOfferings() {
 
                 <div className={styles.cardBottom}>
                   <p>{programme.grades}</p>
-                  <span className={styles.paperMark} aria-hidden="true" />
+
+                  <span
+                    className={styles.paperMark}
+                    aria-hidden="true"
+                  />
                 </div>
               </article>
             ))}
           </div>
         </div>
 
-        <div className={styles.paperEdge} aria-hidden="true" />
+        <div
+          className={styles.paperEdge}
+          aria-hidden="true"
+        />
       </section>
 
       <section
@@ -107,7 +120,9 @@ export default function ServiceOfferings() {
       >
         <div className={styles.container}>
           <header className={styles.learningHeading}>
-            <p className={styles.eyebrow}>SUPPORT AT EVERY STAGE</p>
+            <p className={styles.eyebrow}>
+              SUPPORT AT EVERY STAGE
+            </p>
 
             <h2 id="learning-title">
               Our Learning <span>Tracks</span>
@@ -119,16 +134,24 @@ export default function ServiceOfferings() {
             </p>
           </header>
 
-          <div className={styles.trackList}>
+          <ScrollRevealList className={styles.trackList}>
             {tracks.map((track) => (
-              <article className={styles.trackPanel} key={track.id}>
+              <article
+                key={track.id}
+                className={styles.trackPanel}
+              >
                 <div className={styles.trackTitle}>
-                  <span className={styles.trackNumber} aria-hidden="true">
+                  <span
+                    className={styles.trackNumber}
+                    aria-hidden="true"
+                  >
                     {track.number}
                   </span>
 
                   <div>
-                    <p className={styles.trackLabel}>{track.label}</p>
+                    <p className={styles.trackLabel}>
+                      {track.label}
+                    </p>
 
                     <h3>
                       {track.title}
@@ -151,6 +174,7 @@ export default function ServiceOfferings() {
                           <span className={styles.detailNumber}>
                             {String(index + 1).padStart(2, "0")}
                           </span>
+
                           <span>{item}</span>
                         </li>
                       ))}
@@ -159,7 +183,7 @@ export default function ServiceOfferings() {
                 </div>
               </article>
             ))}
-          </div>
+          </ScrollRevealList>
         </div>
       </section>
     </div>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import TeacherMoms from "../../components/TeacherMoms";
 import ServiceOfferings from "../../components/ServiceOfferings";
+import ClassProcess from "../../components/ClassProcess";
 import styles from "./services.module.css";
 
 const pageUrl = "https://gulf.momsonteaching.com/services";
@@ -29,18 +30,8 @@ export const metadata: Metadata = {
   },
 };
 
-const steps = [
-  "Book Demo",
-  "Meet Teacher",
-  "Learning Assessment",
-  "Personalized Plan",
-  "Weekly Classes",
-  "Progress Reports",
-];
-
-// Replace each null with the corresponding photo path.
+// Replace null with the photo path when available.
 // Example: image: "/teachers/deepthy.webp"
-// Store these images in public/teachers/.
 const teachers = [
   {
     id: "deepthy",
@@ -65,10 +56,7 @@ const teachers = [
     id: "ajisha",
     name: "Ajisha K. A",
     experience: "6 years experience in tutoring",
-    details: [
-      "Classes 9 and 10",
-      "Physics, Chemistry and Maths",
-    ],
+    details: ["Classes 9 and 10", "Physics, Chemistry and Maths"],
     curriculum: "CBSE & ICSE",
     image: null,
   },
@@ -119,8 +107,13 @@ export default function ServicesPage() {
             <p className={styles.eyebrow}>OUR SERVICES</p>
 
             <h1 id="services-title">
-              One-to-one online tuition.
-              <span>Built around your child.</span>
+              <span className={styles.titleLine}>
+                One-to-one online tuition.
+              </span>
+
+              <span className={styles.titleLine}>
+                Built around your child.
+              </span>
             </h1>
 
             <p className={styles.intro}>
@@ -153,45 +146,9 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Redesigned programmes and learning tracks. */}
       <ServiceOfferings />
 
-      <section
-        className={`${styles.section} ${styles.navySection}`}
-        aria-labelledby="process-title"
-      >
-        <div className={styles.container}>
-          <div className={styles.sectionHeading}>
-            <p className={styles.eyebrow}>
-              YOUR CHILD’S LEARNING JOURNEY
-            </p>
-
-            <h2 id="process-title">How a Class Works</h2>
-          </div>
-
-          <ol className={styles.steps}>
-            {steps.map((step, index) => (
-              <li key={step}>
-                <span
-                  className={styles.stepNumber}
-                  aria-hidden="true"
-                >
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-
-                <h3>{step}</h3>
-
-                {index === 1 && (
-                  <p>
-                    Meet the best tutor and get to know them through an
-                    interactive session.
-                  </p>
-                )}
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
+      <ClassProcess />
 
       <section
         className={styles.section}
@@ -219,9 +176,7 @@ export default function ServicesPage() {
         className={styles.cta}
         aria-labelledby="demo-title"
       >
-        <div
-          className={`${styles.container} ${styles.ctaInner}`}
-        >
+        <div className={`${styles.container} ${styles.ctaInner}`}>
           <div>
             <p className={styles.eyebrow}>
               LET’S START WITH A CONVERSATION

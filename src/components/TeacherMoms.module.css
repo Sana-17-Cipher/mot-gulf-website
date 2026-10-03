@@ -329,3 +329,29 @@
     transition: none;
   }
 }
+.carousel .portrait {
+  height: clamp(185px, 19vw, 240px);
+}
+
+.carousel .content {
+  padding: 20px;
+}
+
+.carousel .content h3 {
+  font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+}
+
+.carousel .content ul {
+  font-size: 0.82rem;
+  line-height: 1.75;
+}
+
+.carousel .placeholder {
+  font-size: 3.5rem;
+}
+
+@media (max-width: 640px) {
+  .carousel .portrait {
+    height: clamp(220px, 65vw, 300px);
+  }
+}

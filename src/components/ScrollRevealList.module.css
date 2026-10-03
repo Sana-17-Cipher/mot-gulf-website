@@ -1,0 +1,36 @@
+.list > [data-reveal] {
+  opacity: 1;
+  translate: 0 0;
+  transition:
+    opacity 600ms ease,
+    translate 750ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 350ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.list > [data-reveal="pending"]:nth-child(odd) {
+  opacity: 0;
+  translate: -64px 0;
+}
+
+.list > [data-reveal="pending"]:nth-child(even) {
+  opacity: 0;
+  translate: 64px 0;
+}
+
+@media (max-width: 700px) {
+  .list > [data-reveal="pending"]:nth-child(odd) {
+    translate: -28px 0;
+  }
+
+  .list > [data-reveal="pending"]:nth-child(even) {
+    translate: 28px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .list > [data-reveal] {
+    opacity: 1 !important;
+    translate: none !important;
+    transition: none !important;
+  }
+}
