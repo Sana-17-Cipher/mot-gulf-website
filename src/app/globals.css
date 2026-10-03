@@ -2540,89 +2540,46 @@ body {
 .site-content > main:has(#services-title) {
   padding-top: 120px;
 }
-
-.site-footer,
-.site-footer * {
-  box-sizing: border-box;
-}
-
-.site-footer {
-  padding: 44px 24px 22px;
-  border-top: 1px solid #e3dacb;
-  background: #f2e8d7;
-  color: #172547;
-}
-
-.site-footer-inner {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 32px;
-  max-width: 1120px;
-  margin-inline: auto;
-}
-
-.site-footer a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.site-footer-logo {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-.site-footer-brand p {
-  margin: 14px 0 0;
-  color: #52617b;
-  font-size: 0.9rem;
-  line-height: 1.8;
-}
-
-.site-footer-links {
+.mot-contact-social-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 24px;
+  gap: 10px;
 }
 
-.site-footer-links a {
+.mot-contact-social-icon {
   display: inline-flex;
   align-items: center;
-  min-height: 44px;
-  font-size: 0.9rem;
+  justify-content: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid #e5dfd3;
+  border-radius: 50%;
+  background: #fffdf8;
+  color: #172547;
+  text-decoration: none;
+  transition: background-color 180ms ease, border-color 180ms ease;
 }
 
-.site-footer-links a:hover {
-  text-decoration: underline;
-  text-underline-offset: 4px;
+.mot-contact-social-icon svg {
+  display: block;
+  width: 19px;
+  height: 19px;
 }
 
-.site-footer a:focus-visible {
-  outline: 3px solid #a77319;
+.mot-contact-social-icon:hover {
+  background: #f4e6c8;
+  border-color: #c6a263;
+}
+
+.mot-contact-social-icon:focus-visible {
+  outline: 2px solid #a77319;
   outline-offset: 4px;
 }
 
-.site-footer-bottom {
-  max-width: 1120px;
-  margin: 30px auto 0;
-  padding-top: 20px;
-  border-top: 1px solid #ded3c1;
-  color: #52617b;
-  font-size: 0.8rem;
-}
-
-@media (max-width: 640px) {
-  .site-content > main:has(#services-title) {
-    padding-top: 96px;
-  }
-
-  .site-footer {
-    padding-inline: 20px;
-  }
-
-  .site-footer-inner {
-    flex-direction: column;
-    gap: 20px;
+@media (prefers-reduced-motion: reduce) {
+  .mot-contact-social-icon {
+    transition: none;
   }
 }

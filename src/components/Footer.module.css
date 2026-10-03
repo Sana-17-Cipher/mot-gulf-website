@@ -1,0 +1,537 @@
+.footer {
+  --footer-bg: #0e182e;
+  --footer-text: #c3cada;
+  --footer-muted: #929caf;
+  --footer-heading: #ffffff;
+  --footer-line: #ffffff1c;
+
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.footer,
+.footer *,
+.footer *::before,
+.footer *::after {
+  box-sizing: border-box;
+}
+
+.container {
+  width: min(1600px, calc(100% - 80px));
+  margin-inline: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.2fr)
+    minmax(0, 0.9fr)
+    minmax(0, 1.05fr)
+    minmax(0, 1.05fr)
+    minmax(0, 1.15fr);
+  gap: 48px;
+  padding: 82px 30px 72px;
+}
+
+.grid > * {
+  min-width: 0;
+}
+
+.footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer a:focus-visible {
+  outline: 2px solid #efa92f;
+  outline-offset: 5px;
+  border-radius: 3px;
+}
+
+.brandLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  display: block;
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #fffde7;
+  object-fit: contain;
+}
+
+.brandName {
+  color: var(--footer-heading);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.5px;
+}
+
+.description {
+  max-width: 275px;
+  margin: 30px 0 0;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin: 70px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.socials a,
+.unlinkedIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 32px;
+  color: #ffffff;
+}
+
+.socials a {
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.socials a:hover {
+  color: #efa92f;
+  transform: translateY(-2px);
+}
+
+.column h2,
+.contact h2 {
+  margin: 0 0 25px;
+  color: var(--footer-heading);
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+.linkList {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.linkList a,
+.linkList > li > span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.linkList a,
+.legalLinks a,
+.contactLink {
+  transition: color 180ms ease;
+}
+
+.linkList a:hover,
+.legalLinks a:hover,
+.contactLink:hover {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin: 30px 0 0;
+  font-style: normal;
+}
+
+.contactLink {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.contactLink > span:last-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.contactIcon {
+  display: grid;
+  flex: 0 0 45px;
+  place-items: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 5px;
+  background: #192f57;
+  color: #63a9ff;
+}
+
+.contactIcon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px 30px 60px;
+  border-top: 1px solid var(--footer-line);
+  color: var(--footer-muted);
+}
+
+.bottom p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.legalLinks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 30px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.legalLinks a,
+.legalLinks > li > span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* Smaller desktops and landscape tablets */
+@media (max-width: 1400px) {
+  .grid {
+    gap: 28px;
+    padding-inline: 0;
+  }
+
+  .brandName {
+    font-size: 23px;
+  }
+
+  .logo {
+    width: 52px;
+    height: 52px;
+  }
+
+  .linkList a,
+  .linkList > li > span,
+  .contactLink {
+    font-size: 15px;
+  }
+
+  .socials {
+    gap: 5px;
+  }
+
+  .bottom {
+    padding-inline: 0;
+  }
+}
+
+/* Tablets */
+@media (max-width: 1100px) {
+  .container {
+    width: calc(100% - 48px);
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 44px 32px;
+    padding-block: 60px;
+  }
+
+  .contact {
+    grid-column: span 2;
+  }
+
+  .socials {
+    margin-top: 28px;
+  }
+
+  .contactList {
+    gap: 18px;
+  }
+
+  .bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 32px;
+  }
+}
+
+/* Phones */
+@media (max-width: 640px) {
+  .container {
+    width: calc(100% - 40px);
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 34px 24px;
+    padding-block: 44px;
+  }
+
+  .brand {
+    grid-column: 1 / -1;
+  }
+
+  .brandName {
+    font-size: 25px;
+  }
+
+  .logo {
+    width: 56px;
+    height: 56px;
+  }
+
+  .description {
+    max-width: 360px;
+    margin-top: 22px;
+  }
+
+  .socials {
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .column h2,
+  .contact h2 {
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+
+  .contact {
+    grid-column: 1 / -1;
+  }
+
+  .contactList {
+    margin-top: 20px;
+  }
+
+  .bottom {
+    padding-top: 22px;
+  }
+
+  .bottom p,
+  .legalLinks a,
+  .legalLinks > li > span {
+    font-size: 13px;
+  }
+
+  .legalLinks {
+    gap: 4px 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer a {
+    transition: none;
+  }
+
+  .socials a:hover {
+    transform: none;
+  }
+}
+/* Compact footer proportions */
+.container {
+  width: min(1540px, calc(100% - 64px));
+}
+
+.grid {
+  gap: 36px;
+  padding: 54px 0 42px;
+}
+
+.brandLink {
+  gap: 12px;
+}
+
+.logo {
+  width: 52px;
+  height: 52px;
+}
+
+.brandName {
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.description {
+  max-width: 265px;
+  margin-top: 22px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+/* Smaller, lighter column headings */
+.column h2,
+.contact h2 {
+  margin-bottom: 19px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.linkList {
+  gap: 4px;
+}
+
+.linkList a,
+.linkList > li > span {
+  min-height: 36px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* Keep social icons together */
+.socials {
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.socials a,
+.unlinkedIcon {
+  width: 24px;
+  height: 32px;
+}
+
+.socials svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Compact contact details */
+.contactList {
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.contactLink {
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.contactIcon {
+  flex-basis: 38px;
+  width: 38px;
+  height: 38px;
+}
+
+.contactIcon svg {
+  width: 17px;
+  height: 17px;
+}
+
+/* Reduce empty space beneath the divider */
+.bottom {
+  gap: 20px;
+  padding: 20px 0 28px;
+}
+
+.bottom p,
+.legalLinks a,
+.legalLinks > li > span {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.legalLinks {
+  gap: 8px 24px;
+}
+
+/* Give the email enough room on desktop */
+@media (min-width: 1101px) {
+  .grid {
+    grid-template-columns:
+      minmax(0, 1.15fr)
+      minmax(0, 0.8fr)
+      minmax(0, 0.85fr)
+      minmax(0, 0.95fr)
+      minmax(280px, 1.2fr);
+  }
+}
+
+@media (max-width: 1100px) {
+  .container {
+    width: calc(100% - 48px);
+  }
+
+  .grid {
+    gap: 32px;
+    padding-block: 42px 34px;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    width: calc(100% - 40px);
+  }
+
+  .grid {
+    gap: 28px 20px;
+    padding-block: 36px 28px;
+  }
+
+  .description {
+    max-width: 340px;
+  }
+
+  .socials {
+    margin-top: 20px;
+  }
+
+  /* Comfortable touch targets on phones */
+  .linkList a,
+  .socials a,
+  .legalLinks a {
+    min-height: 44px;
+  }
+
+  .socials a,
+  .unlinkedIcon {
+    width: 30px;
+  }
+
+  .bottom {
+    gap: 10px;
+    padding-block: 18px 24px;
+  }
+}
