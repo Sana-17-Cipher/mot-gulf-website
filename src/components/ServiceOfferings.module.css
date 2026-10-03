@@ -1,0 +1,493 @@
+.offerings {
+  --cream: #fbf6ec;
+  --navy: #172547;
+  --gold: #eba932;
+  --muted: #53617a;
+
+  color: var(--navy);
+  background: var(--cream);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.offerings,
+.offerings *,
+.offerings *::before,
+.offerings *::after {
+  box-sizing: border-box;
+}
+
+.offerings h2,
+.offerings h3,
+.offerings p {
+  margin: 0;
+}
+
+.offerings h2,
+.offerings h3 {
+  font-family: var(--font-heading, Georgia), serif;
+  font-weight: 600;
+}
+
+.container {
+  width: min(1200px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0.16em;
+}
+
+/* Curved entrance into the navy section. */
+
+.programmes {
+  position: relative;
+  isolation: isolate;
+  padding: 128px 0 108px;
+  background: var(--navy);
+  color: var(--cream);
+  scroll-margin-top: 100px;
+}
+
+.topCurve {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 72px;
+  fill: var(--cream);
+  pointer-events: none;
+}
+
+.programmeHeading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 54px;
+}
+
+.programmeHeading .eyebrow {
+  margin-bottom: 18px;
+  color: var(--gold);
+}
+
+.programmeHeading h2 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.programmeHeading h2 span {
+  display: block;
+  color: #efd7a6;
+}
+
+.headingNote {
+  padding-bottom: 6px;
+  color: #d0d7e3;
+  font-size: 0.9375rem;
+  line-height: 1.8;
+}
+
+/* Paper cards with subtle changes in angle and colour. */
+
+.programmeGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 18px;
+  padding-block: 10px;
+}
+
+.programmeCard {
+  --rotation: -1.4deg;
+
+  display: flex;
+  min-width: 0;
+  min-height: 238px;
+  flex-direction: column;
+  padding: 24px 20px;
+  border: 1px solid #ffffff55;
+  border-radius: 5px 20px 5px 5px;
+  background: #f4ecd9;
+  color: var(--navy);
+  box-shadow: 0 12px 22px #08112620;
+  transform: rotate(var(--rotation));
+  transition:
+    transform 350ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 350ms ease;
+}
+
+.programmeCard:nth-child(2) {
+  --rotation: 1.5deg;
+  background: #e2e9ef;
+}
+
+.programmeCard:nth-child(3) {
+  --rotation: -1deg;
+  background: #efd59e;
+}
+
+.programmeCard:nth-child(4) {
+  --rotation: 1.3deg;
+  background: #f8f3e9;
+}
+
+.programmeCard:nth-child(5) {
+  --rotation: -1.2deg;
+  background: #dce3e9;
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: #4e5870;
+  font-size: 0.6875rem;
+  font-weight: 600;
+}
+
+.cardLabel {
+  letter-spacing: 0.12em;
+}
+
+.programmeCard h3 {
+  margin-block: 38px 30px;
+  font-size: clamp(1.65rem, 2.8vw, 2.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+  overflow-wrap: anywhere;
+}
+
+.cardBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 17px;
+  border-top: 1px solid #1725472b;
+}
+
+.cardBottom p {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.paperMark {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #17254755;
+  border-radius: 50%;
+}
+
+/* Cream paper with navy circular cutouts. */
+
+.paperEdge {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 28px;
+  background:
+    radial-gradient(
+      circle at 18px 0,
+      var(--navy) 10px,
+      transparent 10.8px
+    )
+    0 0 / 36px 28px repeat-x,
+    var(--cream);
+  pointer-events: none;
+}
+
+/* Spacious editorial heading above the learning panels. */
+
+.learning {
+  position: relative;
+  padding: 82px 0 112px;
+  background: var(--cream);
+}
+
+.learningHeading {
+  max-width: 740px;
+  margin-bottom: 48px;
+}
+
+.learningHeading .eyebrow {
+  margin-bottom: 17px;
+  color: #806024;
+}
+
+.learningHeading h2 {
+  font-size: clamp(2.4rem, 4.8vw, 4.25rem);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+
+.learningHeading h2 span {
+  color: #806024;
+}
+
+.learningIntro {
+  max-width: 610px;
+  margin-top: 22px !important;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+/* Wide panels, staggered slightly rather than three identical boxes. */
+
+.trackList {
+  display: grid;
+  gap: 24px;
+}
+
+.trackPanel {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: center;
+  gap: 40px;
+  width: calc(100% - 52px);
+  min-height: 238px;
+  padding: 40px;
+  border: 1px solid #17254716;
+  border-radius: 12px 44px 12px 12px;
+  background: #eee4d0;
+  transition: transform 350ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.trackPanel:nth-child(2) {
+  margin-left: auto;
+  border-radius: 44px 12px 12px 12px;
+  background: #e3eaf0;
+}
+
+.trackPanel:nth-child(3) {
+  margin-left: 20px;
+  background: #efd6a4;
+}
+
+.trackTitle {
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+}
+
+.trackNumber {
+  padding-top: 3px;
+  color: #596378;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.trackLabel {
+  margin-bottom: 15px !important;
+  color: #515d70;
+  font-size: 0.65rem;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0.12em;
+}
+
+.trackTitle h3 {
+  font-size: clamp(1.9rem, 3.3vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+.trackTitle h3 span {
+  display: block;
+}
+
+.trackDetails {
+  min-width: 0;
+  padding-left: 32px;
+  border-left: 1px solid #17254726;
+}
+
+.foundationText {
+  max-width: 280px;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  line-height: 1.7;
+}
+
+.trackDetails ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.trackDetails li {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding-block: 13px;
+  border-bottom: 1px solid #17254720;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.trackDetails li:first-child {
+  padding-top: 0;
+}
+
+.trackDetails li:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.detailNumber {
+  flex-shrink: 0;
+  color: #566075;
+  font-size: 0.6875rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Slanted transition into the existing navy class-process section. */
+
+.learning::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 42px;
+  background: var(--navy);
+  clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  pointer-events: none;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .programmeCard:hover {
+    transform: translateY(-7px) rotate(0);
+    box-shadow: 0 20px 30px #08112630;
+  }
+
+  .trackPanel:hover {
+    transform: translateY(-4px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .programmeGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .programmeCard {
+    min-height: 220px;
+  }
+
+  .trackPanel {
+    gap: 28px;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: calc(100% - 36px);
+  }
+
+  .programmes {
+    padding: 92px 0 76px;
+  }
+
+  .topCurve {
+    height: 44px;
+  }
+
+  .programmeHeading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 34px;
+  }
+
+  .programmeGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .programmeCard {
+    min-height: 205px;
+    padding: 20px 16px;
+  }
+
+  .programmeCard:last-child {
+    grid-column: 1 / -1;
+    min-height: 175px;
+    transform: none;
+  }
+
+  .programmeCard:last-child h3 {
+    margin-block: 22px;
+  }
+
+  .programmeCard h3 {
+    font-size: 2rem;
+  }
+
+  .learning {
+    padding: 56px 0 84px;
+  }
+
+  .learningHeading {
+    margin-bottom: 32px;
+  }
+
+  .trackPanel,
+  .trackPanel:nth-child(2),
+  .trackPanel:nth-child(3) {
+    grid-template-columns: 1fr;
+    width: 100%;
+    min-height: 0;
+    margin-left: 0;
+    padding: 28px;
+    gap: 28px;
+  }
+
+  .trackTitle {
+    gap: 17px;
+  }
+
+  .trackDetails {
+    padding-top: 22px;
+    padding-left: 0;
+    border-top: 1px solid #17254726;
+    border-left: 0;
+  }
+
+  .foundationText {
+    max-width: none;
+  }
+
+  .learning::after {
+    height: 26px;
+  }
+}
+
+@media (max-width: 360px) {
+  .programmeGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .programmeCard {
+    min-height: 180px;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .programmeCard,
+  .trackPanel {
+    transition: none;
+  }
+}

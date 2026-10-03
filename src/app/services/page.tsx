@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import TeacherMoms from "../../components/TeacherMoms";
+import ServiceOfferings from "../../components/ServiceOfferings";
 import styles from "./services.module.css";
 
 const pageUrl = "https://gulf.momsonteaching.com/services";
@@ -28,35 +29,6 @@ export const metadata: Metadata = {
   },
 };
 
-const programmes = [
-  { name: "CBSE", grades: "Grades 1–12" },
-  { name: "ICSE", grades: "Grades 1–12" },
-  { name: "IGCSE", grades: "Grades 1–12" },
-  { name: "IB", grades: "Grades 1–12" },
-  { name: "General", grades: "KG–Plus Two" },
-];
-
-const tracks = [
-  {
-    number: "01",
-    title: "Strong Roots Foundation",
-    description: "For students needing concept clarity.",
-    items: [],
-  },
-  {
-    number: "02",
-    title: "Academic Mastery",
-    description: "",
-    items: ["Daily learning", "Homework", "Assignments"],
-  },
-  {
-    number: "03",
-    title: "Exam Success",
-    description: "",
-    items: ["Revision", "Mock Tests", "Performance Analysis"],
-  },
-];
-
 const steps = [
   "Book Demo",
   "Meet Teacher",
@@ -66,18 +38,10 @@ const steps = [
   "Progress Reports",
 ];
 
-// Only the three readable profiles from your screenshot are included.
-// Add the remaining profiles here when their content is available.
-// Replace null with the original photo path, e.g. "/teachers/deepthy.webp".
+// Replace each null with the corresponding photo path.
+// Example: image: "/teachers/deepthy.webp"
+// Store these images in public/teachers/.
 const teachers = [
-  {
-    id: "anjusha",
-    name: "Anjusha K. A",
-    experience: "2 years experience",
-    details: ["Motivational Mentor in Malayalam"],
-    curriculum: "",
-    image: null,
-  },
   {
     id: "deepthy",
     name: "Deepthy Sarat",
@@ -97,14 +61,55 @@ const teachers = [
     curriculum: "",
     image: null,
   },
+  {
+    id: "ajisha",
+    name: "Ajisha K. A",
+    experience: "6 years experience in tutoring",
+    details: [
+      "Classes 9 and 10",
+      "Physics, Chemistry and Maths",
+    ],
+    curriculum: "CBSE & ICSE",
+    image: null,
+  },
+  {
+    id: "dilna",
+    name: "Dilna Arun",
+    experience: "3 years experience",
+    details: ["High school", "Master Trainer in Basics"],
+    curriculum: "",
+    image: null,
+  },
+  {
+    id: "sruthy",
+    name: "Sruthy Emilraj",
+    experience: "8 years experience",
+    details: ["High school", "Social Science and Malayalam"],
+    curriculum: "",
+    image: null,
+  },
+  {
+    id: "anjusha",
+    name: "Anjusha K. A",
+    experience: "2 years experience",
+    details: ["Inspirational Mentor in Malayalam"],
+    curriculum: "",
+    image: null,
+  },
 ];
 
 export default function ServicesPage() {
   return (
     <main className={styles.page}>
-      <section className={styles.hero} aria-labelledby="services-title">
+      <section
+        className={styles.hero}
+        aria-labelledby="services-title"
+      >
         <div className={styles.container}>
-          <nav aria-label="Breadcrumb" className={styles.breadcrumb}>
+          <nav
+            aria-label="Breadcrumb"
+            className={styles.breadcrumb}
+          >
             <Link href="/">Home</Link>
             <span aria-hidden="true">/</span>
             <span aria-current="page">Services</span>
@@ -124,11 +129,17 @@ export default function ServicesPage() {
             </p>
 
             <div className={styles.actions}>
-              <Link href="/contact" className={styles.primaryButton}>
+              <Link
+                href="/contact"
+                className={styles.primaryButton}
+              >
                 Book a Demo
               </Link>
 
-              <a href="#programmes" className={styles.secondaryButton}>
+              <a
+                href="#programmes"
+                className={styles.secondaryButton}
+              >
                 Explore Programmes
               </a>
             </div>
@@ -142,65 +153,8 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section
-        id="programmes"
-        className={`${styles.section} ${styles.navySection}`}
-        aria-labelledby="programmes-title"
-      >
-        <div className={styles.container}>
-          <div className={styles.sectionHeading}>
-            <p className={styles.eyebrow}>CURRICULUM SUPPORT</p>
-            <h2 id="programmes-title">Our Tutoring Programmes</h2>
-          </div>
-
-          <div className={styles.programmeGrid}>
-            {programmes.map((programme) => (
-              <article className={styles.programme} key={programme.name}>
-                <h3>{programme.name}</h3>
-                <p>{programme.grades}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section
-        className={styles.section}
-        aria-labelledby="tracks-title"
-      >
-        <div className={styles.container}>
-          <div className={styles.sectionHeading}>
-            <p className={styles.eyebrow}>SUPPORT AT EVERY STAGE</p>
-            <h2 id="tracks-title">Our Learning Tracks</h2>
-            <p>
-              Targeted learning tracks for every child’s needs, from
-              building strong foundations to preparing for exams.
-            </p>
-          </div>
-
-          <div className={styles.trackGrid}>
-            {tracks.map((track) => (
-              <article className={styles.track} key={track.title}>
-                <span className={styles.trackNumber} aria-hidden="true">
-                  {track.number}
-                </span>
-
-                <h3>{track.title}</h3>
-
-                {track.description && <p>{track.description}</p>}
-
-                {track.items.length > 0 && (
-                  <ul>
-                    {track.items.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                )}
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Redesigned programmes and learning tracks. */}
+      <ServiceOfferings />
 
       <section
         className={`${styles.section} ${styles.navySection}`}
@@ -208,14 +162,20 @@ export default function ServicesPage() {
       >
         <div className={styles.container}>
           <div className={styles.sectionHeading}>
-            <p className={styles.eyebrow}>YOUR CHILD’S LEARNING JOURNEY</p>
+            <p className={styles.eyebrow}>
+              YOUR CHILD’S LEARNING JOURNEY
+            </p>
+
             <h2 id="process-title">How a Class Works</h2>
           </div>
 
           <ol className={styles.steps}>
             {steps.map((step, index) => (
               <li key={step}>
-                <span className={styles.stepNumber} aria-hidden="true">
+                <span
+                  className={styles.stepNumber}
+                  aria-hidden="true"
+                >
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
@@ -239,8 +199,12 @@ export default function ServicesPage() {
       >
         <div className={styles.container}>
           <div className={styles.sectionHeading}>
-            <p className={styles.eyebrow}>THE PEOPLE BEHIND THE PROGRESS</p>
+            <p className={styles.eyebrow}>
+              THE PEOPLE BEHIND THE PROGRESS
+            </p>
+
             <h2 id="teachers-title">Meet Our Teacher-Moms</h2>
+
             <p>
               Our educators bring years of experience and a mother’s
               touch to every class.
@@ -251,14 +215,27 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className={styles.cta} aria-labelledby="demo-title">
-        <div className={`${styles.container} ${styles.ctaInner}`}>
+      <section
+        className={styles.cta}
+        aria-labelledby="demo-title"
+      >
+        <div
+          className={`${styles.container} ${styles.ctaInner}`}
+        >
           <div>
-            <p className={styles.eyebrow}>LET’S START WITH A CONVERSATION</p>
-            <h2 id="demo-title">Find the right support for your child.</h2>
+            <p className={styles.eyebrow}>
+              LET’S START WITH A CONVERSATION
+            </p>
+
+            <h2 id="demo-title">
+              Find the right support for your child.
+            </h2>
           </div>
 
-          <Link href="/contact" className={styles.primaryButton}>
+          <Link
+            href="/contact"
+            className={styles.primaryButton}
+          >
             Book a Demo
           </Link>
         </div>

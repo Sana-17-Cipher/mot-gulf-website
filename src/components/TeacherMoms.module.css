@@ -1,0 +1,331 @@
+.carousel {
+  --navy: #172547;
+  --gold: #eba932;
+  --muted: #53617a;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  min-width: 0;
+  color: var(--navy);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.carousel,
+.carousel *,
+.carousel *::before,
+.carousel *::after {
+  box-sizing: border-box;
+}
+
+.carousel p {
+  margin: 0;
+}
+
+.toolbar,
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.toolbar {
+  margin-bottom: 20px;
+}
+
+.toolbar > p {
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.controls {
+  display: flex;
+  flex-shrink: 0;
+  gap: 10px;
+}
+
+.controls button {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 1px solid #c9cdd4;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--navy);
+  cursor: pointer;
+  transition:
+    background-color 220ms ease,
+    border-color 220ms ease,
+    color 220ms ease;
+}
+
+.controls button:hover:not(:disabled) {
+  border-color: var(--navy);
+  background: var(--navy);
+  color: white;
+}
+
+.controls button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+/* Only one complete slide is visible. */
+.viewport {
+  width: 100%;
+  overflow: hidden;
+  touch-action: pan-y pinch-zoom;
+  cursor: grab;
+}
+
+.viewport:active {
+  cursor: grabbing;
+}
+
+/* Each slide occupies exactly one viewport width. */
+.track {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  transition: transform 760ms var(--ease);
+}
+
+.dragging {
+  transition: none;
+}
+
+.slide {
+  display: flex;
+  flex: 0 0 100%;
+  align-items: stretch;
+  gap: 22px;
+  min-width: 0;
+  padding: 12px 3px 26px;
+}
+
+/* Expansion happens within each group of three. */
+.card {
+  flex: 1 1 0%;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #e2ded5;
+  border-radius: 22px;
+  background: #fff;
+  transform: translateY(0);
+  transition:
+    flex-grow 650ms var(--ease),
+    transform 650ms var(--ease),
+    border-color 450ms ease,
+    box-shadow 450ms ease;
+}
+
+.expanded {
+  flex-grow: 1.6;
+  transform: translateY(-6px);
+  border-color: #c5aa78;
+  box-shadow: 0 12px 22px #17254710;
+}
+
+.portrait {
+  position: relative;
+  height: clamp(220px, 24vw, 300px);
+  overflow: hidden;
+  background: #e5e5de;
+}
+
+.photo {
+  object-fit: cover;
+  object-position: center 25%;
+  pointer-events: none;
+  user-select: none;
+  filter: saturate(0.55);
+  transform: scale(1.04);
+  transition:
+    filter 650ms ease,
+    transform 650ms var(--ease);
+}
+
+.expanded .photo {
+  filter: saturate(1);
+  transform: scale(1);
+}
+
+.placeholder {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  background: linear-gradient(135deg, #ebe5d9, #d8dfe4);
+  color: var(--navy);
+  font-family: Georgia, serif;
+  font-size: clamp(3rem, 5vw, 5rem);
+  letter-spacing: -0.05em;
+  user-select: none;
+}
+
+.content {
+  padding: 25px;
+}
+
+.carousel .experience {
+  margin: 0 0 12px;
+  color: #806024;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.carousel .content h3 {
+  margin: 0;
+  color: var(--navy);
+  font-family: var(--font-heading, Georgia), serif;
+  font-size: clamp(1.3rem, 2.1vw, 1.85rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  overflow-wrap: anywhere;
+}
+
+.content ul {
+  padding: 0;
+  margin: 16px 0 0;
+  list-style: none;
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.8;
+}
+
+.badge {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 6px 11px;
+  border-radius: 5px;
+  background: #f0f2f5;
+  color: var(--navy);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.footer {
+  margin-top: 4px;
+}
+
+.footer > p {
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.6;
+  font-variant-numeric: tabular-nums;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+
+.pagination button {
+  position: relative;
+  width: 38px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.pagination button::after {
+  content: "";
+  position: absolute;
+  top: 19px;
+  right: 7px;
+  left: 7px;
+  height: 6px;
+  border-radius: 10px;
+  background: #c9ced5;
+  transition: background-color 250ms ease;
+}
+
+.pagination button[aria-current="true"]::after {
+  background: var(--navy);
+}
+
+.carousel button:focus-visible,
+.card:focus-visible,
+.viewport:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: -3px;
+}
+
+@media (max-width: 960px) {
+  .slide {
+    gap: 18px;
+  }
+
+  .expanded {
+    flex-grow: 1.35;
+  }
+
+  .portrait {
+    height: 280px;
+  }
+}
+
+@media (max-width: 640px) {
+  .toolbar {
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .toolbar > p {
+    max-width: 160px;
+  }
+
+  .slide {
+    gap: 0;
+    padding: 8px 3px 20px;
+  }
+
+  .card,
+  .expanded {
+    flex: 1 1 0%;
+    transform: none;
+    border-radius: 18px;
+    box-shadow: none;
+  }
+
+  .portrait {
+    height: clamp(250px, 80vw, 360px);
+  }
+
+  .photo {
+    filter: none;
+    transform: none;
+  }
+
+  .content {
+    padding: 24px;
+  }
+
+  .carousel .content h3 {
+    font-size: 1.75rem;
+  }
+
+  .footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track,
+  .card,
+  .photo,
+  .controls button,
+  .pagination button::after {
+    transition: none;
+  }
+}

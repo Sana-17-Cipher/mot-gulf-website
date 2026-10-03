@@ -663,4 +663,89 @@
     animation: none !important;
     scroll-behavior: auto !important;
   }
+}/* Six teacher cards in a horizontal, animated rail */
+.teacherRail {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+  scrollbar-color: #b7beca transparent;
+  padding: 12px 2px 28px;
+}
+
+.teacherCard {
+  flex: 0 0 29%;
+  min-width: 0;
+  overflow: hidden;
+  scroll-snap-align: center;
+  border: 1px solid #e4dfd5;
+  border-radius: 16px;
+  background: white;
+  transition:
+    flex-basis 650ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 650ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 450ms ease,
+    border-color 450ms ease;
+}
+
+.teacherActive {
+  flex-basis: 43%;
+  transform: translateY(-7px);
+  border-color: #b9995f;
+  box-shadow: 0 20px 42px #1725471c;
+}
+
+.teacherImage {
+  object-fit: cover;
+  object-position: center 25%;
+  filter: saturate(0.65);
+  transform: scale(1.04);
+  transition:
+    filter 650ms ease,
+    transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.teacherActive .teacherImage {
+  filter: saturate(1);
+  transform: scale(1);
+}
+
+@media (max-width: 1024px) {
+  .teacherCard {
+    flex-basis: 39%;
+  }
+
+  .teacherActive {
+    flex-basis: 55%;
+  }
+}
+
+@media (max-width: 760px) {
+  .teacherRail {
+    gap: 16px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .teacherCard,
+  .teacherActive {
+    flex: 0 0 85%;
+    scroll-snap-align: start;
+    transform: none;
+  }
+
+  .teacherImage,
+  .teacherActive .teacherImage {
+    filter: none;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .teacherCard,
+  .teacherImage {
+    transition: none;
+  }
 }
