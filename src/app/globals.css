@@ -2248,7 +2248,7 @@
 /* --- Hero --- */
 .mot-faq-hero {
   text-align: center;
-  padding: 5.5rem 1.5rem 2.5rem;
+  padding: 5.5rem 1.5rem 3.5rem;
   max-width: 720px;
   margin: 0 auto;
 }
@@ -2277,31 +2277,6 @@
   line-height: 1.7;
 }
 
-/* --- Hero divider --- */
-.mot-faq-hero-divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.85rem;
-  max-width: 320px;
-  margin: 0 auto 3.5rem;
-  padding: 0 1.5rem;
-}
-
-.mot-faq-hero-divider-line {
-  flex: 1;
-  height: 1px;
-  background-color: #e3d9c4;
-}
-
-.mot-faq-hero-divider-mark {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background-color: #efa92f;
-  flex-shrink: 0;
-}
-
 /* --- Content wrapper --- */
 .mot-faq-content {
   max-width: 880px;
@@ -2313,26 +2288,16 @@
   margin-bottom: 3rem;
 }
 
-.mot-faq-category-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.mot-faq-category-rule {
-  width: 28px;
-  height: 3px;
-  border-radius: 2px;
-  background-color: #efa92f;
-  flex-shrink: 0;
-}
-
 .mot-faq-category-badge {
-  font-family: Georgia, "Times New Roman", serif;
+  display: inline-block;
+  background-color: #fbf4e6;
+  color: #c9800c;
+  font-size: 0.75rem;
   font-weight: 700;
-  font-size: 1.05rem;
-  color: #17284f;
+  letter-spacing: 0.08em;
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  margin-bottom: 1.5rem;
 }
 
 /* --- FAQ list & items --- */

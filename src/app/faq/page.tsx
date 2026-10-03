@@ -87,19 +87,12 @@ export default function FaqPage() {
         </p>
       </section>
 
-      <div className="mot-faq-hero-divider" aria-hidden="true">
-        <span className="mot-faq-hero-divider-line" />
-        <span className="mot-faq-hero-divider-mark" />
-        <span className="mot-faq-hero-divider-line" />
-      </div>
-
       <section className="mot-faq-content">
         {faqData.map((category) => (
           <div className="mot-faq-category" key={category.label}>
-            <div className="mot-faq-category-header">
-              <span className="mot-faq-category-rule" aria-hidden="true" />
-              <span className="mot-faq-category-badge">{category.label}</span>
-            </div>
+            <span className="mot-faq-category-badge">
+              {category.label.toUpperCase()}
+            </span>
 
             <div className="mot-faq-list">
               {category.items.map((item) => {

@@ -1,0 +1,666 @@
+.page {
+  --cream: #fbf6ec;
+  --navy: #172547;
+  --navy-deep: #0e1930;
+  --gold: #eba932;
+  --text: #52617b;
+  --line: #dedfdc;
+
+  background: var(--cream);
+  color: var(--navy);
+  font-family: inherit;
+}
+
+.page,
+.page *,
+.page *::before,
+.page *::after {
+  box-sizing: border-box;
+}
+
+.page h1,
+.page h2,
+.page h3,
+.page p {
+  margin: 0;
+}
+
+.page h1,
+.page h2,
+.page h3 {
+  font-family: var(--font-heading, Georgia), serif;
+  font-weight: 600;
+}
+
+.page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.page button {
+  font: inherit;
+}
+
+.page a:focus-visible,
+.page button:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 5px;
+}
+
+.container {
+  width: min(1200px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.hero {
+  padding: 28px 0 88px;
+  border-bottom: 1px solid var(--line);
+}
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: var(--text);
+  font-size: 0.875rem;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.heroContent {
+  max-width: 880px;
+  padding-top: 72px;
+}
+
+.eyebrow {
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  line-height: 1.6;
+}
+
+.hero h1 {
+  margin-top: 20px;
+  font-size: clamp(2.5rem, 5.5vw, 4.75rem);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+
+.hero h1 span {
+  display: block;
+  color: #806024;
+}
+
+.intro {
+  max-width: 650px;
+  margin-top: 26px !important;
+  color: var(--text);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.8;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 13px 24px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  transition:
+    background-color 200ms ease,
+    transform 200ms ease;
+}
+
+.primaryButton {
+  background: var(--gold);
+  color: var(--navy-deep) !important;
+}
+
+.primaryButton:hover {
+  background: #f2b94f;
+  transform: translateY(-2px);
+}
+
+.secondaryButton {
+  border-color: #c8c9cb;
+}
+
+.secondaryButton:hover {
+  background: #f0eadf;
+}
+
+.heroNotes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin-top: 34px;
+  color: var(--text);
+  font-size: 0.8125rem;
+}
+
+.heroNotes span {
+  padding-left: 12px;
+  border-left: 2px solid var(--gold);
+}
+
+.section {
+  padding-block: 80px;
+  scroll-margin-top: 96px;
+}
+
+.sectionHeading {
+  max-width: 760px;
+  margin-bottom: 38px;
+}
+
+.sectionHeading .eyebrow {
+  margin-bottom: 12px;
+  color: #806024;
+}
+
+.sectionHeading h2,
+.cta h2 {
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.sectionHeading > p:last-child:not(.eyebrow) {
+  margin-top: 18px;
+  color: var(--text);
+  line-height: 1.8;
+}
+
+.navySection {
+  background: var(--navy);
+  color: white;
+}
+
+.navySection .eyebrow {
+  color: var(--gold);
+}
+
+.programmeGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.programme {
+  padding: 28px 22px;
+  border: 1px solid #3d4b69;
+  border-radius: 12px;
+  background: #ffffff06;
+}
+
+.programme h3 {
+  color: var(--gold);
+  font-size: 1.75rem;
+}
+
+.programme p {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid #ffffff24;
+  color: #d1d8e5;
+  line-height: 1.5;
+}
+
+.trackGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.track {
+  padding: 32px;
+  border: 1px solid #e8e3da;
+  border-radius: 14px;
+  background: white;
+}
+
+.trackNumber {
+  display: inline-block;
+  margin-bottom: 36px;
+  color: #806024;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.track h3 {
+  font-size: clamp(1.5rem, 2.2vw, 1.875rem);
+  line-height: 1.25;
+}
+
+.track p,
+.track ul {
+  margin-top: 18px;
+  color: var(--text);
+  line-height: 1.8;
+}
+
+.track ul {
+  padding-left: 19px;
+  margin-bottom: 0;
+}
+
+.track li::marker {
+  color: #997026;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 22px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.steps li {
+  border-top: 1px solid #58617a;
+  padding-top: 22px;
+}
+
+.stepNumber {
+  display: block;
+  margin-bottom: 24px;
+  color: var(--gold);
+  font-size: 1.5rem;
+}
+
+.steps h3 {
+  font-family: inherit;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.steps p {
+  margin-top: 12px;
+  color: #cbd3e1;
+  font-size: 0.8125rem;
+  line-height: 1.7;
+}
+
+.carouselToolbar,
+.carouselBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.carouselToolbar {
+  margin-bottom: 20px;
+}
+
+.carouselHint {
+  color: var(--text);
+  font-size: 0.875rem;
+}
+
+.carouselControls {
+  display: flex;
+  flex-shrink: 0;
+  gap: 10px;
+}
+
+.carouselControls button {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid #cbd0d7;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--navy);
+  cursor: pointer;
+  transition:
+    background-color 200ms ease,
+    color 200ms ease;
+}
+
+.carouselControls button:hover:not(:disabled) {
+  background: var(--navy);
+  color: white;
+}
+
+.carouselControls button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.teacherRail {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+}
+
+.teacherCard {
+  flex: 1 1 0%;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #e4dfd5;
+  border-radius: 16px;
+  background: white;
+  transition:
+    flex-grow 650ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 450ms ease;
+}
+
+.teacherActive {
+  flex-grow: 1.65;
+  box-shadow: 0 18px 38px #17254712;
+}
+
+.teacherPortrait {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 300px;
+  padding: 0;
+  border: 0;
+  background: #e8e7e0;
+  color: var(--navy);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.teacherPortrait:focus-visible {
+  outline-offset: -6px !important;
+}
+
+.teacherImage {
+  object-fit: cover;
+  object-position: center 25%;
+  filter: saturate(0.65);
+  transform: scale(1.025);
+  transition:
+    filter 600ms ease,
+    transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.teacherActive .teacherImage {
+  filter: saturate(1);
+  transform: scale(1);
+}
+
+.portraitPlaceholder {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  background: linear-gradient(135deg, #e9e4d9, #d7dce1);
+}
+
+.portraitPlaceholder span:first-child {
+  font-family: Georgia, serif;
+  font-size: 4rem;
+  letter-spacing: -0.05em;
+}
+
+.portraitPlaceholder span:last-child {
+  color: var(--text);
+  font-size: 0.75rem;
+}
+
+.teacherContent {
+  min-height: 230px;
+  padding: 26px;
+}
+
+.teacherExperience {
+  margin-bottom: 12px !important;
+  color: #806024;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.teacherContent h3 {
+  font-size: clamp(1.4rem, 2.2vw, 1.875rem);
+  line-height: 1.25;
+}
+
+.teacherContent ul {
+  padding: 0;
+  margin: 16px 0 0;
+  list-style: none;
+  color: var(--text);
+  font-size: 0.875rem;
+  line-height: 1.8;
+}
+
+.curriculum {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 5px 12px;
+  border-radius: 4px;
+  background: #f1f3f6;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.carouselBottom {
+  margin-top: 24px;
+}
+
+.carouselBottom > p {
+  color: var(--text);
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.carouselDots {
+  display: flex;
+  gap: 4px;
+}
+
+.carouselDots button {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.carouselDots button::after {
+  content: "";
+  position: absolute;
+  inset: 12px 6px;
+  border-radius: 8px;
+  background: #c6cbd3;
+  transition: background-color 200ms ease;
+}
+
+.carouselDots .dotActive::after {
+  background: var(--navy);
+}
+
+.cta {
+  padding-block: 52px;
+  border-top: 1px solid #e2d8c7;
+  background: #f2e8d7;
+}
+
+.ctaInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.ctaInner > div {
+  max-width: 720px;
+}
+
+.cta .eyebrow {
+  margin-bottom: 14px;
+}
+
+.cta .primaryButton {
+  flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+  .programmeGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px;
+  }
+
+  .track {
+    padding: 24px;
+  }
+
+  .teacherRail {
+    gap: 14px;
+  }
+
+  .teacherPortrait {
+    height: 260px;
+  }
+
+  .teacherContent {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 760px) {
+  .container {
+    width: calc(100% - 32px);
+  }
+
+  .hero {
+    padding-bottom: 56px;
+  }
+
+  .heroContent {
+    padding-top: 44px;
+  }
+
+  .section {
+    padding-block: 56px;
+  }
+
+  .sectionHeading {
+    margin-bottom: 28px;
+  }
+
+  .trackGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .track {
+    padding: 28px;
+  }
+
+  .trackNumber {
+    margin-bottom: 22px;
+  }
+
+  .teacherRail {
+    gap: 16px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: #b7beca transparent;
+    padding-bottom: 16px;
+  }
+
+  .teacherCard,
+  .teacherActive {
+    flex: 0 0 85%;
+    scroll-snap-align: start;
+    box-shadow: none;
+  }
+
+  .teacherPortrait {
+    height: clamp(260px, 70vw, 380px);
+  }
+
+  .teacherImage {
+    filter: none;
+    transform: none;
+  }
+
+  .teacherContent {
+    min-height: 225px;
+    padding: 24px;
+  }
+
+  .teacherContent h3 {
+    font-size: 1.75rem;
+  }
+
+  .ctaInner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .programmeGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .programme {
+    padding: 22px 18px;
+  }
+
+  .programme h3 {
+    font-size: 1.5rem;
+  }
+
+  .steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 20px;
+  }
+
+  .actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .carouselHint {
+    max-width: 160px;
+    line-height: 1.5;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page *,
+  .page *::before,
+  .page *::after {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}
