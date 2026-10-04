@@ -1,226 +1,167 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import ContactForm from "@/components/ContactForm";
+import styles from "./contact.module.css";
+
+export const metadata: Metadata = {
+  title: "Contact Us | Moms on Teaching Gulf",
+  description:
+    "Ask about one-to-one online tuition or request a free demo with Moms on Teaching. Contact our team for help with subjects, classes and fees.",
+  alternates: {
+    canonical: "https://gulf.momsonteaching.com/contact",
+  },
+};
+
 export default function ContactPage() {
   return (
-    <>
-      {/* ================= HERO ================= */}
-      <section className="mot-contact-hero">
-        <div className="mot-contact-hero-inner">
-          <h1 className="mot-contact-heading">
-            Contact <em>Us</em>
-          </h1>
-          <p className="mot-contact-subtext">
-            We&apos;re here to help. Whether you have questions, feedback, or
-            need support, our team is ready to assist you.
+    <main className={styles.page}>
+      <div className={styles.container}>
+        <nav className={styles.breadcrumb} aria-label="Breadcrumb">
+          <Link href="/">Home</Link>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Contact</span>
+        </nav>
+
+        <header className={styles.header}>
+          <h1>Let’s talk about your child’s learning.</h1>
+          <p>
+            Have a question or ready to try a class? We’re here to help.
           </p>
-        </div>
+        </header>
 
-        <svg
-          className="mot-contact-hero-wave"
-          viewBox="0 0 1440 120"
-          preserveAspectRatio="none"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-        >
-          <path
-            d="M0,40 C240,110 480,0 720,45 C960,90 1200,10 1440,60 L1440,120 L0,120 Z"
-            fill="#fffdf8"
-          />
-        </svg>
-      </section>
-
-      {/* ================= GET IN TOUCH + FORM ================= */}
-      <section className="mot-contact-section">
-        <div className="mot-contact-grid">
-          {/* ---- Get in touch ---- */}
-          <div>
-            <h2 className="mot-contact-subheading">
-              Get in <em>touch</em>
-            </h2>
-
-            <div className="mot-contact-info-list">
-              <div className="mot-contact-info-card">
-                <span className="mot-contact-info-label">Email</span>
-                <span className="mot-contact-info-value">
-                  info@momsonteaching.com
-                </span>
-              </div>
-
-              <div className="mot-contact-info-card">
-                <span className="mot-contact-info-label">Phone</span>
-                <span className="mot-contact-info-value">
-                  +91 7012092344
-                </span>
-              </div>
-
-              <div className="mot-contact-info-card">
-                <span className="mot-contact-info-label">Response Time</span>
-                <span className="mot-contact-info-value">
-                  Within 2&ndash;4 business hours
-                </span>
-              </div>
-
-              <div className="mot-contact-info-card">
-                <span className="mot-contact-info-label">Follow Us</span>
-                <div className="mot-contact-social-row">
-  {/* YouTube */}
-  <a
-  href="https://www.youtube.com/@MomsonteachingTutions"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="mot-contact-social-icon"
-  aria-label="YouTube (opens in a new tab)"
->
-    <svg
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      aria-hidden="true"
-      focusable="false"
-    >
-      <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z" />
-    </svg>
-  </a>
-
-  {/* Instagram */}
-  <a
-  href="https://www.instagram.com/moms.on.teaching/"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="mot-contact-social-icon"
-  aria-label="Instagram (opens in a new tab)"
->
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      aria-hidden="true"
-      focusable="false"
-    >
-      <rect x="3" y="3" width="18" height="18" rx="5" />
-      <circle cx="12" cy="12" r="4" />
-      <circle
-        cx="17.5"
-        cy="6.5"
-        r="1.1"
-        fill="currentColor"
-        stroke="none"
-      />
-    </svg>
-  </a>
-
-  {/* Twitter */}
-  <a
-    href="#"
-    className="mot-contact-social-icon"
-    aria-label="Twitter"
-  >
-    <svg
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      aria-hidden="true"
-      focusable="false"
-    >
-      <path d="M23.95 4.57a10 10 0 0 1-2.82.78 4.93 4.93 0 0 0 2.16-2.72 9.99 9.99 0 0 1-3.13 1.2 4.92 4.92 0 0 0-8.38 4.48A13.98 13.98 0 0 1 1.64 3.16a4.92 4.92 0 0 0 1.52 6.56 4.9 4.9 0 0 1-2.23-.62v.06a4.92 4.92 0 0 0 3.95 4.82 4.94 4.94 0 0 1-2.22.08 4.93 4.93 0 0 0 4.6 3.42A9.87 9.87 0 0 1 0 19.52a13.94 13.94 0 0 0 7.55 2.21c9.06 0 14.01-7.5 14.01-14.01 0-.21 0-.42-.02-.63a10.01 10.01 0 0 0 2.46-2.55Z" />
-    </svg>
-  </a>
-</div>
-              </div>
-            </div>
-          </div>
-
-          {/* ---- Send us a message ---- */}
-          <div>
-            <h2 className="mot-contact-subheading">Send Us a Message</h2>
-
-            <form className="mot-contact-form">
-              <div className="mot-contact-form-row">
-                <input
-                  type="text"
-                  className="mot-contact-input"
-                  placeholder="Parent's Name"
-                  name="parentName"
-                />
-                <input
-                  type="tel"
-                  className="mot-contact-input"
-                  placeholder="Phone Number"
-                  name="phoneNumber"
-                />
-              </div>
-
-              <div className="mot-contact-form-row">
-                <select className="mot-contact-select" name="service" defaultValue="">
-                  <option value="" disabled>
-                    Service
-                  </option>
-                  <option value="cbse">CBSE</option>
-                  <option value="icse">ICSE</option>
-                  <option value="igcse">IGCSE</option>
-                  <option value="ib">IB</option>
-                  <option value="us-curriculum">US Curriculum</option>
-                </select>
-                <select
-  className="mot-contact-select"
-  name="emirate"
-  aria-label="Emirate"
-  defaultValue=""
-  required
->
-  <option value="" disabled>
-    Select Emirate
-  </option>
-  <option value="abu-dhabi">Abu Dhabi</option>
-  <option value="dubai">Dubai</option>
-  <option value="sharjah">Sharjah</option>
-  <option value="ajman">Ajman</option>
-  <option value="umm-al-quwain">Umm Al Quwain</option>
-  <option value="ras-al-khaimah">Ras Al Khaimah</option>
-  <option value="fujairah">Fujairah</option>
-</select>
-              </div>
-
-              <textarea
-                className="mot-contact-textarea"
-                placeholder="Tell us about your child's grade and any specific needs"
-                name="message"
-              />
-
-              <button type="submit" className="mot-contact-submit">
-                Request a Free Demo Class
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
-
-      {/* ================= APP PROMO CARD ================= */}
-      <section className="mot-contact-app-section">
-        <div className="mot-contact-app-card">
-          <div className="mot-contact-app-wave" />
-
-          <div className="mot-contact-app-inner">
-            <h2 className="mot-contact-app-heading">
-              Ready to <em>Transform</em> Your
-              <br />
-              <span className="mot-contact-app-highlight">
-                Child&apos;s Learning?
-              </span>
-            </h2>
-            <p className="mot-contact-app-text">
-              Experience the future of education with our upcoming mobile
-              app. Track your child&apos;s progress, schedule classes
-              effortlessly, and stay in touch with Teacher-Moms directly
-              from your phone.
+        <div className={styles.grid}>
+          <section
+            className={styles.details}
+            aria-labelledby="contact-details-title"
+          >
+            <h2 id="contact-details-title">Get in touch</h2>
+            <p className={styles.sectionIntro}>
+              Ask us about subjects, tuition fees or finding the right
+              support for your child.
             </p>
 
-            <div className="mot-contact-app-actions">
-              <a href="#" className="mot-contact-app-download">
-                Download App <span>&rarr;</span>
+            <dl className={styles.contactList}>
+              <div>
+                <dt>Email us</dt>
+                <dd>
+                  <a href="mailto:info@momsonteaching.com">
+                    info@momsonteaching.com
+                  </a>
+                </dd>
+              </div>
+
+              <div>
+                <dt>Call us</dt>
+                <dd>
+                  <a href="tel:+917012092344">+91 70120 92344</a>
+                </dd>
+              </div>
+
+              <div>
+                <dt>Response time</dt>
+                <dd>Within 2–4 business hours</dd>
+              </div>
+            </dl>
+
+            <div className={styles.connectRow}>
+              <a
+                href="https://wa.me/917012092344"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.whatsapp}
+              >
+                Chat on WhatsApp
+                <span aria-hidden="true">↗</span>
+                <span className={styles.srOnly}>
+                  {" "}(opens in a new tab)
+                </span>
               </a>
-              <span className="mot-contact-app-badge">Coming Soon</span>
+
+              <div className={styles.socials}>
+                <a
+                  href="https://www.youtube.com/@MomsonteachingTutions"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube (opens in a new tab)"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.7"
+                    aria-hidden="true"
+                  >
+                    <rect x="2" y="5" width="20" height="14" rx="4" />
+                    <path
+                      d="m10 9 5 3-5 3Z"
+                      fill="currentColor"
+                      stroke="none"
+                    />
+                  </svg>
+                </a>
+
+                <a
+                  href="https://www.instagram.com/moms.on.teaching/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram (opens in a new tab)"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.7"
+                    aria-hidden="true"
+                  >
+                    <rect x="3" y="3" width="18" height="18" rx="5" />
+                    <circle cx="12" cy="12" r="4" />
+                    <circle
+                      cx="17.5"
+                      cy="6.5"
+                      r="1"
+                      fill="currentColor"
+                      stroke="none"
+                    />
+                  </svg>
+                </a>
+              </div>
             </div>
-          </div>
+          </section>
+
+          <section
+            className={styles.formPanel}
+            aria-labelledby="demo-form-title"
+          >
+            <div className={styles.formHeading}>
+              <h2 id="demo-form-title">Request a free demo</h2>
+              <p>Share a few details so we can guide you.</p>
+            </div>
+
+            <ContactForm />
+          </section>
         </div>
-      </section>
-    </>
+
+        <aside className={styles.appStrip} aria-labelledby="app-title">
+          <span className={styles.appIcon} aria-hidden="true">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.7"
+            >
+              <rect x="6" y="2" width="12" height="20" rx="3" />
+              <path d="M10 5h4M10 19h4" />
+            </svg>
+          </span>
+
+          <div>
+            <h2 id="app-title">Learning, a little closer.</h2>
+            <p>The Moms on Teaching mobile app is on its way.</p>
+          </div>
+
+          <span className={styles.comingSoon}>Coming soon</span>
+        </aside>
+      </div>
+    </main>
   );
 }

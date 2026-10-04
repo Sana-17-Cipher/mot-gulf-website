@@ -1,0 +1,152 @@
+.trigger {
+  position: relative;
+  display: block;
+  flex: 0 0 auto;
+  width: 250px;
+  height: 82px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: #172547;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.trigger:focus-visible {
+  outline: 2px solid #a77319;
+  outline-offset: 3px;
+}
+
+.scene {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 250px;
+  height: 82px;
+  pointer-events: none;
+  transform-origin: bottom left;
+}
+
+.books {
+  position: absolute;
+  bottom: 13px;
+  left: 10px;
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.book {
+  position: relative;
+  display: block;
+  flex: 0 0 var(--width);
+  width: var(--width);
+  height: var(--height);
+  overflow: hidden;
+  border: 1px solid rgb(23 37 71 / 12%);
+  border-radius: 2px 3px 2px 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgb(255 255 255 / 25%),
+      transparent 24%,
+      transparent 75%,
+      rgb(0 0 0 / 12%)
+    ),
+    var(--cover);
+
+  box-shadow:
+    inset 2px 0 0 rgb(255 255 255 / 15%),
+    1px 1px 2px rgb(23 37 71 / 8%);
+
+  transform: rotate(0deg);
+  transform-origin: bottom right;
+
+  transition:
+    transform 420ms cubic-bezier(0.22, 0.75, 0.25, 1)
+    var(--reset-delay);
+}
+
+.trigger[data-fallen="true"] .book {
+  transform: rotate(var(--angle));
+
+  transition:
+    transform 380ms cubic-bezier(0.42, 0, 0.8, 0.65)
+    var(--fall-delay);
+}
+
+.label {
+  position: absolute;
+  inset: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fffdf8;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 6px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.7px;
+  writing-mode: vertical-rl;
+}
+
+/* Dark lettering on pale covers */
+.book:nth-child(1) .label,
+.book:nth-child(2) .label,
+.book:nth-child(4) .label,
+.book:nth-child(6) .label {
+  color: #26364b;
+}
+
+.topBand,
+.bottomBand {
+  position: absolute;
+  right: 2px;
+  left: 2px;
+  height: 2px;
+  border-block: 1px solid rgb(255 253 248 / 55%);
+}
+
+.topBand {
+  top: 5px;
+}
+
+.bottomBand {
+  bottom: 5px;
+}
+
+.shelf {
+  position: absolute;
+  right: 3px;
+  bottom: 10px;
+  left: 3px;
+  height: 3px;
+  border-radius: 999px;
+  background: #d8c9ad;
+  box-shadow: 0 3px 5px rgb(23 37 71 / 5%);
+}
+
+/* Keep the animation small on phones */
+@media (max-width: 640px) {
+  .trigger {
+    width: 160px;
+    height: 56px;
+  }
+
+  .scene {
+    transform: scale(0.64);
+  }
+}
+
+/* Change position instantly without animated movement */
+@media (prefers-reduced-motion: reduce) {
+  .book,
+  .trigger[data-fallen="true"] .book {
+    transition: none;
+  }
+}
