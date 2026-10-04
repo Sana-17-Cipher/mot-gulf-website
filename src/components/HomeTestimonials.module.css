@@ -1,0 +1,268 @@
+.section {
+  --navy: #172547;
+  --background: #e1cdc6;
+
+  padding: 28px 0 42px;
+  overflow: hidden;
+  background: var(--background);
+  color: var(--navy);
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+}
+
+.section,
+.section *,
+.section *::before,
+.section *::after {
+  box-sizing: border-box;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: min(1240px, calc(100% - 64px));
+  margin: 0 auto 20px;
+}
+
+.heading h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(23px, 2.2vw, 29px);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+/* Small animation control */
+
+.motionButton {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 1px solid #e9e6e5;
+  border-radius: 999px;
+  background: transparent;
+  color: #625d65;
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.motionButton svg {
+  width: 16px;
+  height: 16px;
+}
+
+.motionButton:focus-visible,
+.viewport:focus-visible {
+  outline: 2px solid #9e782f;
+  outline-offset: 3px;
+}
+
+/* Full-width scrolling strip */
+
+.viewport {
+  overflow: hidden;
+  padding-block: 5px 9px;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 5%,
+    #000 95%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 5%,
+    #000 95%,
+    transparent
+  );
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: slideTestimonials 55s linear infinite;
+}
+
+/*
+ * Each group includes its trailing gap.
+ * Two identical groups create a seamless loop.
+ */
+.group {
+  display: flex;
+  flex-shrink: 0;
+  align-items: stretch;
+  gap: 16px;
+  padding-right: 16px;
+}
+
+.card {
+  display: flex;
+  flex: 0 0 280px;
+  flex-direction: column;
+  width: 280px;
+  margin: 0;
+  padding: 16px 20px;
+  border: 1px solid #e6dcd5;
+  border-radius: 12px;
+  background: #fffaf4;
+}
+
+.card:nth-child(even) {
+  background: #fcf6f1;
+}
+
+.quoteMark {
+  height: 24px;
+  color: #b59158;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 38px;
+  line-height: 1;
+}
+
+.card blockquote {
+  margin: 5px 0 14px;
+}
+
+.card blockquote p {
+  margin: 0;
+  color: #46516a;
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.card figcaption {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: auto;
+  color: #756a66;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.authorDot {
+  flex: 0 0 5px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #b99a68;
+}
+
+@keyframes slideTestimonials {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.section[data-paused="true"] .track,
+.viewport:focus-within .track {
+  animation-play-state: paused;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .viewport:hover .track {
+    animation-play-state: paused;
+  }
+
+  .motionButton:hover {
+    background: #fff7f0;
+  }
+}
+
+@media (max-width: 700px) {
+  .section {
+    padding: 22px 0 30px;
+  }
+
+  .heading {
+    width: calc(100% - 32px);
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .heading h2 {
+    max-width: 330px;
+    font-size: 24px;
+  }
+
+  .card {
+    flex-basis: 250px;
+    width: 250px;
+    padding: 15px 17px;
+  }
+
+  .group {
+    gap: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .heading {
+    align-items: flex-start;
+  }
+
+  .heading h2 {
+    font-size: 22px;
+  }
+
+  .motionButton {
+    min-width: 44px;
+    padding-inline: 10px;
+  }
+
+  .motionButton > span {
+    display: none;
+  }
+}
+
+/* Show all cards without motion when requested */
+
+@media (prefers-reduced-motion: reduce) {
+  .motionButton {
+    display: none;
+  }
+
+  .viewport {
+    width: min(1240px, calc(100% - 32px));
+    margin-inline: auto;
+    overflow: visible;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .track {
+    width: 100%;
+    animation: none;
+    transform: none;
+  }
+
+  .group {
+    display: grid;
+    grid-template-columns:
+      repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .group[aria-hidden="true"] {
+    display: none;
+  }
+
+  .card {
+    width: 100%;
+  }
+}
