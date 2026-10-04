@@ -1,0 +1,250 @@
+.page {
+  --navy: #172547;
+  --cream: #fbf7ef;
+  --ink-soft: #586174;
+  --gold: #89632d;
+  --line: #e2dbce;
+  background: var(--cream);
+  color: var(--navy);
+  font-family: var(--font-geist-sans, Arial), sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  overflow-wrap: break-word;
+}
+
+.page, .page *, .page *::before, .page *::after { box-sizing: border-box; }
+.page h1, .page h2, .page h3, .page p { margin: 0; }
+.page h1, .page h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; text-wrap: balance; }
+.page h1 { font-size: clamp(38px, 4.5vw, 64px); line-height: 1.12; letter-spacing: -0.045em; }
+.page h2 { font-size: clamp(30px, 3.1vw, 44px); line-height: 1.2; letter-spacing: -0.035em; }
+.page h3 { font-size: 19px; line-height: 1.4; font-weight: 600; }
+.page em { font-family: Georgia, "Times New Roman", serif; color: #786342; font-weight: 400; }
+.page a { color: inherit; text-decoration: none; }
+.page a:focus-visible { outline: 3px solid #9c742e; outline-offset: 5px; border-radius: 4px; }
+.page section[id] { scroll-margin-top: 100px; }
+.container { width: min(1160px, calc(100% - 80px)); margin-inline: auto; }
+.page .eyebrow { margin-bottom: 18px; font-size: 11px; line-height: 1.7; font-weight: 600; letter-spacing: 0.14em; color: var(--gold); }
+
+/* Opening: editorial type and a simple paper note, with no image dependency. */
+.hero { padding: 24px 0 76px; }
+.breadcrumb { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; font-size: 12px; color: var(--ink-soft); margin-bottom: 48px; }
+.breadcrumb a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: underline; text-underline-offset: 4px; }
+.heroGrid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); align-items: center; gap: 64px; }
+.page .lead { max-width: 540px; margin-top: 26px; font-size: 17px; line-height: 1.9; color: var(--ink-soft); }
+.storyLink { display: inline-flex; gap: 24px; align-items: center; min-height: 44px; margin-top: 24px; font-size: 13px; border-bottom: 1px solid #aea08b; }
+.storyLink span { font-size: 20px; }
+.beliefNote { position: relative; background: #f0e8dc; padding: 50px 34px 30px; border: 1px solid #e2d7c6; border-radius: 3px 18px 3px 3px; box-shadow: 8px 8px 0 #e9e2d5; transform: rotate(2deg); }
+.noteTab { position: absolute; left: 26px; top: -14px; padding: 6px 13px; background: #dce7df; color: #435f50; font-size: 9px; letter-spacing: 0.11em; font-weight: 600; }
+.page .noteStatement { font-family: Georgia, "Times New Roman", serif; font-size: clamp(25px, 2.55vw, 34px); line-height: 1.55; letter-spacing: -0.03em; }
+.noteRule { width: 46px; height: 2px; background: #b1915b; margin: 25px 0 19px; }
+.page .noteCaption { color: #665e54; font-size: 13px; max-width: 240px; }
+.noteSignature { display: block; margin-top: 18px; font-family: Georgia, "Times New Roman", serif; font-style: italic; font-size: 16px; color: #665e54; }
+
+/* A spacious, two-column story rather than a grid of cards. */
+.chapter { padding: 78px 0; background: #fffdf8; }
+.editorialGrid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 80px; }
+.prose { color: var(--ink-soft); }
+.prose p + p { margin-top: 20px; }
+.journey { padding: 76px 0 54px; }
+.journeyHeading { max-width: 700px; }
+.journeyHeading > p:last-child { margin-top: 22px; max-width: 540px; color: var(--ink-soft); }
+.journeySteps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 38px; list-style: none; margin: 48px 0 0; padding: 0; }
+.journeySteps li { position: relative; padding: 28px 0 0; border-top: 1px solid #c7bba8; }
+.journeySteps li::before { content: ""; position: absolute; top: -5px; left: 0; width: 9px; height: 9px; background: #9d8050; border: 2px solid var(--cream); border-radius: 50%; }
+.stepLabel { display: block; color: var(--gold); font-size: 10px; font-weight: 600; letter-spacing: 0.1em; margin-bottom: 12px; }
+.journeySteps p { margin-top: 14px; font-size: 14px; color: var(--ink-soft); }
+.curricula { display: flex; align-items: center; justify-content: space-between; gap: 20px; border-top: 1px solid var(--line); padding-top: 28px; margin-top: 40px; }
+.curricula p { font-size: 13px; color: var(--ink-soft); }
+.curricula ul { display: flex; flex-wrap: wrap; gap: 9px; list-style: none; margin: 0; padding: 0; }
+.curricula li { padding: 5px 13px; border: 1px solid #dbd3c5; border-radius: 999px; font-size: 11px; }
+
+.peopleGrid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 80px; align-items: start; }
+.peopleIntro > p:not(.eyebrow) { margin-top: 23px; color: var(--ink-soft); }
+.values article { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 20px; padding: 24px 0; border-bottom: 1px solid var(--line); }
+.values article:first-child { padding-top: 0; }
+.valueNumber { font-family: Georgia, "Times New Roman", serif; font-size: 19px; color: var(--gold); }
+.values h3 { font-size: 17px; }
+.values p { color: var(--ink-soft); margin-top: 9px; font-size: 14px; }
+.founder { margin-top: 60px; }
+.founderQuote { max-width: 760px; margin: 24px 0; padding-left: 24px; border-left: 2px solid #b1915b; font-family: Georgia, "Times New Roman", serif; font-size: 24px; }
+
+.purpose { padding: 64px 0 70px; background: var(--navy); color: #fff9ef; }
+.purpose .eyebrow { color: #e8c476; }
+.purposeGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 60px; margin-top: 38px; }
+.purposeGrid article { border-top: 1px solid #4b5671; padding-top: 24px; }
+.purposeGrid h3 { color: #e8c476; font-size: 16px; }
+.purposeGrid p { margin-top: 13px; color: #d6deeb; max-width: 490px; font-size: 15px; }
+.invitation { padding: 65px 0 70px; background: #f7ece8; }
+.invitationGrid { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 48px; }
+.invitation p:last-child { margin-top: 20px; font-size: 14px; color: var(--ink-soft); }
+.actions { display: flex; flex-direction: column; align-items: stretch; gap: 13px; }
+.primaryButton { display: inline-flex; align-items: center; justify-content: space-between; gap: 32px; min-height: 48px; padding: 12px 25px; border-radius: 999px; background: var(--navy); color: #fff9ef !important; font-size: 14px; transition: background-color 160ms ease; }
+.secondaryLink { display: inline-flex; gap: 16px; align-items: center; justify-content: center; min-height: 44px; font-size: 13px; }
+@media (hover: hover) {
+  .primaryButton:hover { background: #304567; }
+  .storyLink:hover, .secondaryLink:hover { text-decoration: underline; text-underline-offset: 5px; }
+}
+
+@media (max-width: 1000px) {
+  .container { width: calc(100% - 56px); }
+  .heroGrid { gap: 36px; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); }
+  .beliefNote { padding-inline: 24px; }
+  .editorialGrid, .peopleGrid { gap: 40px; }
+  .journeySteps { gap: 24px; }
+  .curricula { align-items: flex-start; flex-direction: column; }
+}
+
+@media (max-width: 760px) {
+  .hero { padding-bottom: 52px; }
+  .breadcrumb { margin-bottom: 30px; }
+  .heroGrid, .editorialGrid, .peopleGrid, .purposeGrid, .invitationGrid { grid-template-columns: minmax(0, 1fr); gap: 30px; }
+  .heroGrid { gap: 46px; }
+  .hero h1 { max-width: 600px; }
+  .beliefNote { width: min(100%, 460px); padding: 38px 28px 26px; transform: none; }
+  .noteStatement { font-size: 29px !important; }
+  .chapter, .journey { padding: 52px 0; }
+  .journeySteps { grid-template-columns: minmax(0, 1fr); gap: 0; margin-top: 32px; }
+  .journeySteps li { padding: 0 0 28px 26px; border-top: 0; border-left: 1px solid #c7bba8; }
+  .journeySteps li:last-child { padding-bottom: 0; }
+  .journeySteps li::before { top: 4px; left: -5px; }
+  .stepLabel { margin-bottom: 6px; }
+  .journeySteps p { margin-top: 10px; max-width: 540px; }
+  .values article:first-child { padding-top: 24px; border-top: 1px solid var(--line); }
+  .purpose, .invitation { padding: 50px 0; }
+  .purposeGrid { margin-top: 30px; }
+  .actions { align-items: flex-start; }
+  .primaryButton { min-width: 185px; }
+  .secondaryLink { justify-content: flex-start; }
+}
+
+@media (max-width: 420px) {
+  .container { width: calc(100% - 36px); }
+  .page h1 { font-size: 36px; }
+  .page h2 { font-size: 29px; }
+  .page .lead { font-size: 16px; }
+  .page .eyebrow { font-size: 10px; letter-spacing: 0.11em; }
+  .beliefNote { box-shadow: 5px 5px 0 #e9e2d5; padding-inline: 21px; }
+  .noteTab { left: 16px; font-size: 8px; }
+  .values article { gap: 12px; }
+  .curricula ul { gap: 7px; }
+  .desktopBreak { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .primaryButton { transition: none; }
+}
+
+@media print {
+  .page { background: white; color: black; }
+  .container { width: 100%; }
+  .beliefNote { transform: none; box-shadow: none; }
+  .purpose { background: white; color: black; }
+  .purpose .eyebrow, .purposeGrid h3, .purposeGrid p { color: black; }
+  .hero, .chapter, .journey, .purpose, .invitation { padding-block: 24px; }
+  .breadcrumb, .storyLink, .actions { display: none; }
+}
+.whyParents {
+  padding: 56px 0 60px;
+  background: var(--cream);
+}
+
+.whyHeading {
+  max-width: 760px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.whyHeading .eyebrow {
+  margin-bottom: 12px;
+}
+
+.whyHeading h2 {
+  font-size: clamp(28px, 3.2vw, 42px);
+}
+
+.whyHeading > p:last-child {
+  margin-top: 14px;
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.reasonGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  margin-top: 36px;
+}
+
+.reason {
+  min-width: 0;
+  padding-top: 20px;
+  border-top: 1px solid #d9cfbd;
+}
+
+.reasonNumber {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--gold);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.reason h3 {
+  max-width: 280px;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.reason p {
+  max-width: 340px;
+  margin-top: 9px;
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+@media (max-width: 900px) {
+  .reasonGrid {
+    gap: 22px;
+  }
+}
+
+@media (max-width: 700px) {
+  .whyParents {
+    padding: 40px 0;
+  }
+
+  .whyHeading {
+    text-align: left;
+  }
+
+  .reasonGrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+    margin-top: 28px;
+  }
+
+  .reason {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr);
+    column-gap: 14px;
+    padding-top: 20px;
+  }
+
+  .reasonNumber {
+    grid-row: span 2;
+    margin-bottom: 0;
+  }
+
+  .reason h3,
+  .reason p {
+    max-width: none;
+  }
+
+  .reason p {
+    grid-column: 2;
+    margin-top: 6px;
+  }
+}
