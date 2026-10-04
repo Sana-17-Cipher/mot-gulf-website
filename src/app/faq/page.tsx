@@ -1,154 +1,185 @@
-"use client";
+import type { Metadata } from "next";
+import Link from "next/link";
+import styles from "./faq.module.css";
 
-import { useState } from "react";
+export const metadata: Metadata = {
+  title: "Frequently Asked Questions | Moms on Teaching Gulf",
+  description:
+    "Find answers about our online tutors, curricula, class scheduling, tuition fees and learning support for families in the UAE and Gulf.",
+  alternates: {
+    canonical: "https://gulf.momsonteaching.com/faq",
+  },
+};
 
 type FaqItem = {
-  id: number;
+  id: string;
   question: string;
   answer: string;
+  link?: {
+    href: string;
+    label: string;
+  };
 };
 
 type FaqCategory = {
-  label: string;
+  id: string;
+  title: string;
+  description: string;
   items: FaqItem[];
 };
 
 const faqData: FaqCategory[] = [
   {
-    label: "About Our Tutors",
+    id: "tutors",
+    title: "Our tutors",
+    description: "Getting to know your Teacher-Mom.",
     items: [
       {
-        id: 1,
+        id: "tutor-checks",
         question: "Are your tutors background-checked?",
         answer:
-          "Yes, every tutor completes identity verification and a background check before being matched with a family.",
+          "Yes. Every tutor completes identity verification and a background check before being matched with a family.",
       },
     ],
   },
   {
-    label: "Services",
+    id: "learning",
+    title: "Classes & learning",
+    description: "Subjects, curricula and language support.",
     items: [
       {
-        id: 2,
-        question: "What curricula and tuitions do you offer?",
+        id: "curricula",
+        question: "Which curricula and subjects do you support?",
         answer:
-          "We support a range of curricula, including state standards, CBSE, and ICSE, across core subjects such as Mathematics, Science, English, and Social Studies, along with test preparation and enrichment tuitions tailored to each child's needs.",
+          "We offer personalised, one-to-one online tuition in core subjects including Mathematics, Science, English and Social Studies. Support includes CBSE, ICSE and state curricula. Contact our team to confirm availability for your child’s curriculum, grade and subjects.",
+        link: {
+          href: "/services",
+          label: "Explore our services",
+        },
       },
       {
-        id: 3,
-        question:
-          "Can classes be conducted in Malayalam or Hindi alongside English?",
+        id: "languages",
+        question: "Can my child learn in Malayalam or Hindi?",
         answer:
-          "Yes, many of our Teacher-Moms are fluent in Malayalam and Hindi and can conduct sessions bilingually, helping children stay connected to their language and culture while learning.",
+          "Yes. Many of our Teacher-Moms can explain concepts in Malayalam or Hindi alongside English. Let us know your child’s preferred language when enquiring so we can check tutor availability.",
       },
     ],
   },
   {
-    label: "Scheduling & Logistics",
+    id: "scheduling",
+    title: "Scheduling & progress",
+    description: "Learning that fits around your family.",
     items: [
       {
-        id: 4,
-        question: "What happens if we relocate to a different state?",
+        id: "relocation",
+        question: "Can classes continue if we move to another country?",
         answer:
-          "Your sessions continue without interruption. All tutoring takes place online, so your family retains the same tutor and schedule regardless of relocation within the United States.",
+          "Because classes take place online, your child can continue learning when your family relocates. Let us know about your move so we can review time-zone differences and agree on a suitable schedule, subject to tutor availability.",
       },
       {
-        id: 5,
-        question: "How do you track and report a child's academic progress?",
+        id: "progress",
+        question: "How will I know how my child is progressing?",
         answer:
-          "Parents receive regular progress reports summarizing topics covered, assessment results, and tutor observations, along with periodic check-in calls to discuss milestones and next steps.",
+          "Parents receive regular updates on topics covered, assessment results and tutor observations. Check-in conversations help you understand your child’s progress and discuss what to focus on next.",
       },
     ],
   },
   {
-    label: "Pricing & Payments",
+    id: "pricing",
+    title: "Fees & getting started",
+    description: "Planning your child’s tuition.",
     items: [
       {
-        id: 6,
-        question: "What is the fee structure?",
+        id: "fees",
+        question: "How much does online tuition cost?",
         answer:
-          "Fees are based on session frequency and subject level, with transparent monthly plans and no hidden charges. Complete pricing details are available on our Pricing page or through a consultation with our team.",
+          "Hourly fees depend on your child’s school level and subject requirements. Our Pricing page lists rates in Indian Rupees (INR), including applicable single-subject rates. Contact us to confirm the equivalent AED amount before booking.",
+        link: {
+          href: "/pricing",
+          label: "View tuition fees",
+        },
       },
     ],
   },
 ];
 
 export default function FaqPage() {
-  const [openId, setOpenId] = useState<number | null>(null);
-
   return (
-    <main className="mot-faq-page">
-      <section className="mot-faq-hero">
-        <span className="mot-faq-hero-kicker">Support Center</span>
-        <h1 className="mot-faq-title">Frequently Asked Questions</h1>
-        <p className="mot-faq-subtitle">
-          Find answers to the most common questions about our tutors,
-          programmes, pricing, and learning process.
-        </p>
-      </section>
+    <main className={styles.page}>
+      <div className={styles.container}>
+        <header className={styles.header}>
+          <h1>A little clarity, a lot of confidence.</h1>
+          <p>
+            Frequently asked questions about learning with Moms on Teaching.
+          </p>
+        </header>
 
-      <section className="mot-faq-content">
-        {faqData.map((category) => (
-          <div className="mot-faq-category" key={category.label}>
-            <span className="mot-faq-category-badge">
-              {category.label.toUpperCase()}
-            </span>
+        <div className={styles.categories}>
+          {faqData.map((category) => (
+            <section
+              key={category.id}
+              className={styles.category}
+              aria-labelledby={`category-${category.id}`}
+            >
+              <div className={styles.categoryHeading}>
+                <h2 id={`category-${category.id}`}>
+                  {category.title}
+                </h2>
+                <p>{category.description}</p>
+              </div>
 
-            <div className="mot-faq-list">
-              {category.items.map((item) => {
-                const isOpen = openId === item.id;
-                return (
-                  <div
-                    className={`mot-faq-item${isOpen ? " mot-faq-item-open" : ""}`}
+              <div className={styles.questions}>
+                {category.items.map((item) => (
+                  <details
                     key={item.id}
-                    onMouseEnter={() => setOpenId(item.id)}
-                    onMouseLeave={() =>
-                      setOpenId((prev) => (prev === item.id ? null : prev))
-                    }
+                    className={styles.item}
+                    name="mot-faq"
                   >
-                    <button
-                      className="mot-faq-question"
-                      onClick={() => setOpenId(isOpen ? null : item.id)}
-                      aria-expanded={isOpen}
-                      aria-controls={`mot-faq-answer-${item.id}`}
-                    >
-                      <span className="mot-faq-number">{item.id}</span>
-                      <span className="mot-faq-question-text">
-                        {item.question}
-                      </span>
-                      <span className="mot-faq-toggle" aria-hidden="true">
-                        +
-                      </span>
-                    </button>
+                    <summary className={styles.question}>
+                      <span>{item.question}</span>
+                      <span
+                        className={styles.toggle}
+                        aria-hidden="true"
+                      />
+                    </summary>
 
-                    <div
-                      className={`mot-faq-answer${isOpen ? " mot-faq-answer-visible" : ""}`}
-                      id={`mot-faq-answer-${item.id}`}
-                    >
+                    <div className={styles.answer}>
                       <p>{item.answer}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        ))}
-      </section>
 
-      <section className="mot-faq-cta">
-        <div className="mot-faq-cta-inner">
-          <div className="mot-faq-cta-text-block">
-            <h2 className="mot-faq-cta-title">Still have questions?</h2>
-            <p className="mot-faq-cta-text">
-              Our team is ready to help you find the perfect tutor for your
-              child.
+                      {item.link && (
+                        <Link
+                          href={item.link.href}
+                          className={styles.answerLink}
+                        >
+                          {item.link.label}
+                          <span aria-hidden="true">↗</span>
+                        </Link>
+                      )}
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
+
+        <section
+          className={styles.cta}
+          aria-labelledby="faq-contact-title"
+        >
+          <div>
+            <h2 id="faq-contact-title">Have another question?</h2>
+            <p>
+              Tell us what’s on your mind. We’re happy to help.
             </p>
           </div>
-          <a href="/contact" className="mot-faq-cta-button">
-            Contact Us
-          </a>
-        </div>
-      </section>
+
+          <Link href="/contact" className={styles.contactButton}>
+            Let’s talk
+            <span aria-hidden="true">↗</span>
+          </Link>
+        </section>
+      </div>
     </main>
   );
 }
