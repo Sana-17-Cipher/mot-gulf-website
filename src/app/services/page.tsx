@@ -42,7 +42,7 @@ const teachers = [
       "Maths, Physics and Chemistry",
     ],
     curriculum: "CBSE",
-    image: null,
+    image: "/teachers/deepthi.jpeg",
   },
   {
     id: "arifa",
@@ -50,7 +50,7 @@ const teachers = [
     experience: "4 years experience",
     details: ["Hindi Expert", "UP & HS"],
     curriculum: "",
-    image: null,
+    image: "/teachers/arifa.jpeg",
   },
   {
     id: "ajisha",
@@ -58,7 +58,7 @@ const teachers = [
     experience: "6 years experience in tutoring",
     details: ["Classes 9 and 10", "Physics, Chemistry and Maths"],
     curriculum: "CBSE & ICSE",
-    image: null,
+    image: "/teachers/ajisha.jpeg",
   },
   {
     id: "dilna",
@@ -66,7 +66,7 @@ const teachers = [
     experience: "3 years experience",
     details: ["High school", "Master Trainer in Basics"],
     curriculum: "",
-    image: null,
+    image: "/teachers/dilma.jpeg",
   },
   {
     id: "sruthy",
@@ -74,7 +74,7 @@ const teachers = [
     experience: "8 years experience",
     details: ["High school", "Social Science and Malayalam"],
     curriculum: "",
-    image: null,
+    image: "/teachers/sruthy.jpeg",
   },
   {
     id: "anjusha",
@@ -82,7 +82,7 @@ const teachers = [
     experience: "2 years experience",
     details: ["Inspirational Mentor in Malayalam"],
     curriculum: "",
-    image: null,
+    image: "/teachers/anjusha.jpeg",
   },
 ];
 

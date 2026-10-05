@@ -8,15 +8,17 @@ import styles from "./Footer.module.css";
  * Empty URLs display as text/icons without broken links.
  */
 const urls = {
-  facebook: "",
-  instagram: "https://www.instagram.com/moms.on.teaching/",
+  facebook:
+    "https://www.facebook.com/people/Moms-On-Teaching/61580403700528",
+  instagram: "https://www.instagram.com/moms.on.teaching",
   youtube: "https://www.youtube.com/@MomsonteachingTutions",
-  linkedin: "",
-  reddit: "",
-  blog: "",
-  privacy: "",
-  terms: "",
-  sitemap: "",
+  linkedin:
+    "https://www.linkedin.com/in/moms-on-teaching-tutions-mot",
+  reddit: "https://www.reddit.com/user/MoT-Thrissur/",
+  blog: "https://momsonteaching.com/en/insightsblogsen",
+privacy: "/privacy",
+terms: "/terms",
+sitemap: "/sitemap",
 };
 
 const phone = "+917012092344";
